@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		612B93121F630FA10017F2DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612B93111F630FA10017F2DE /* Foundation.framework */; };
+		612B93141F630FB50017F2DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612B93131F630FB50017F2DE /* Foundation.framework */; };
+		61C5904D1F63106100CB0A20 /* RedBlackNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C590421F63104300CB0A20 /* RedBlackNode.m */; };
+		61C5904E1F63106100CB0A20 /* RedBlackTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C590431F63104300CB0A20 /* RedBlackTree.m */; };
+		61C5904F1F63106B00CB0A20 /* RedBlackNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C590421F63104300CB0A20 /* RedBlackNode.m */; };
+		61C590501F63106B00CB0A20 /* RedBlackTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C590431F63104300CB0A20 /* RedBlackTree.m */; };
+		61C590511F63108500CB0A20 /* RedBlackColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C590451F63104300CB0A20 /* RedBlackColor.h */; };
+		61C590521F63108500CB0A20 /* RedBlackNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C590461F63104300CB0A20 /* RedBlackNode.h */; };
+		61C590531F63108500CB0A20 /* RedBlackTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C590441F63104300CB0A20 /* RedBlackTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61C5905B1F63110A00CB0A20 /* treesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C5905A1F63110A00CB0A20 /* treesTests.m */; };
+		61C5905D1F63110A00CB0A20 /* libredblacktree_macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 612B92D91F630E6B0017F2DE /* libredblacktree_macOS.a */; };
+		61C590631F63111100CB0A20 /* RBTDeleteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C590481F63104E00CB0A20 /* RBTDeleteTests.m */; };
+		61C590641F63111100CB0A20 /* RBTInsertTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C590471F63104E00CB0A20 /* RBTInsertTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		61C5905E1F63110A00CB0A20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 612B92C11F630E130017F2DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 612B92D81F630E6B0017F2DE;
+			remoteInfo = redblacktree_macOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		612B92C71F630E140017F2DE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		612B92C91F630E140017F2DE /* libredblacktree_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libredblacktree_iOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		612B92D91F630E6B0017F2DE /* libredblacktree_macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libredblacktree_macOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		612B93111F630FA10017F2DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		612B93131F630FB50017F2DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		61C590421F63104300CB0A20 /* RedBlackNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedBlackNode.m; sourceTree = "<group>"; };
+		61C590431F63104300CB0A20 /* RedBlackTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedBlackTree.m; sourceTree = "<group>"; };
+		61C590441F63104300CB0A20 /* RedBlackTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedBlackTree.h; sourceTree = "<group>"; };
+		61C590451F63104300CB0A20 /* RedBlackColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedBlackColor.h; sourceTree = "<group>"; };
+		61C590461F63104300CB0A20 /* RedBlackNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedBlackNode.h; sourceTree = "<group>"; };
+		61C590471F63104E00CB0A20 /* RBTInsertTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBTInsertTests.m; sourceTree = "<group>"; };
+		61C590481F63104E00CB0A20 /* RBTDeleteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBTDeleteTests.m; sourceTree = "<group>"; };
+		61C590581F63110A00CB0A20 /* treesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = treesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		61C5905A1F63110A00CB0A20 /* treesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = treesTests.m; sourceTree = "<group>"; };
+		61C5905C1F63110A00CB0A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		612B92C61F630E140017F2DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612B93121F630FA10017F2DE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		612B92D61F630E6B0017F2DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				612B93141F630FB50017F2DE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61C590551F63110A00CB0A20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61C5905D1F63110A00CB0A20 /* libredblacktree_macOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		612B92C01F630E130017F2DE = {
+			isa = PBXGroup;
+			children = (
+				612B92CB1F630E140017F2DE /* redblacktree */,
+				61C590591F63110A00CB0A20 /* treesTests */,
+				612B92CA1F630E140017F2DE /* Products */,
+				612B93101F630FA10017F2DE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		612B92CA1F630E140017F2DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				612B92C91F630E140017F2DE /* libredblacktree_iOS.a */,
+				612B92D91F630E6B0017F2DE /* libredblacktree_macOS.a */,
+				61C590581F63110A00CB0A20 /* treesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		612B92CB1F630E140017F2DE /* redblacktree */ = {
+			isa = PBXGroup;
+			children = (
+				61C590451F63104300CB0A20 /* RedBlackColor.h */,
+				61C590461F63104300CB0A20 /* RedBlackNode.h */,
+				61C590421F63104300CB0A20 /* RedBlackNode.m */,
+				61C590441F63104300CB0A20 /* RedBlackTree.h */,
+				61C590431F63104300CB0A20 /* RedBlackTree.m */,
+			);
+			path = redblacktree;
+			sourceTree = "<group>";
+		};
+		612B93101F630FA10017F2DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				612B93131F630FB50017F2DE /* Foundation.framework */,
+				612B93111F630FA10017F2DE /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		61C590591F63110A00CB0A20 /* treesTests */ = {
+			isa = PBXGroup;
+			children = (
+				61C590481F63104E00CB0A20 /* RBTDeleteTests.m */,
+				61C590471F63104E00CB0A20 /* RBTInsertTests.m */,
+				61C5905A1F63110A00CB0A20 /* treesTests.m */,
+				61C5905C1F63110A00CB0A20 /* Info.plist */,
+			);
+			path = treesTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		612B92D71F630E6B0017F2DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61C590531F63108500CB0A20 /* RedBlackTree.h in Headers */,
+				61C590511F63108500CB0A20 /* RedBlackColor.h in Headers */,
+				61C590521F63108500CB0A20 /* RedBlackNode.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		612B92C81F630E140017F2DE /* redblacktree_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 612B92D21F630E140017F2DE /* Build configuration list for PBXNativeTarget "redblacktree_iOS" */;
+			buildPhases = (
+				612B92C51F630E140017F2DE /* Sources */,
+				612B92C61F630E140017F2DE /* Frameworks */,
+				612B92C71F630E140017F2DE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = redblacktree_iOS;
+			productName = redblacktree;
+			productReference = 612B92C91F630E140017F2DE /* libredblacktree_iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		612B92D81F630E6B0017F2DE /* redblacktree_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 612B92DF1F630E6B0017F2DE /* Build configuration list for PBXNativeTarget "redblacktree_macOS" */;
+			buildPhases = (
+				612B92D51F630E6B0017F2DE /* Sources */,
+				612B92D61F630E6B0017F2DE /* Frameworks */,
+				612B92D71F630E6B0017F2DE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = redblacktree_macOS;
+			productName = redblacktree_macOS;
+			productReference = 612B92D91F630E6B0017F2DE /* libredblacktree_macOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		61C590571F63110A00CB0A20 /* treesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61C590601F63110A00CB0A20 /* Build configuration list for PBXNativeTarget "treesTests" */;
+			buildPhases = (
+				61C590541F63110A00CB0A20 /* Sources */,
+				61C590551F63110A00CB0A20 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				61C5905F1F63110A00CB0A20 /* PBXTargetDependency */,
+			);
+			name = treesTests;
+			productName = treesTests;
+			productReference = 61C590581F63110A00CB0A20 /* treesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		612B92C11F630E130017F2DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Mateusz Stompór";
+				TargetAttributes = {
+					612B92C81F630E140017F2DE = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					612B92D81F630E6B0017F2DE = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					61C590571F63110A00CB0A20 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 612B92C41F630E130017F2DE /* Build configuration list for PBXProject "redblacktree" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 612B92C01F630E130017F2DE;
+			productRefGroup = 612B92CA1F630E140017F2DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				612B92C81F630E140017F2DE /* redblacktree_iOS */,
+				612B92D81F630E6B0017F2DE /* redblacktree_macOS */,
+				61C590571F63110A00CB0A20 /* treesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		612B92C51F630E140017F2DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61C5904F1F63106B00CB0A20 /* RedBlackNode.m in Sources */,
+				61C590501F63106B00CB0A20 /* RedBlackTree.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		612B92D51F630E6B0017F2DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61C5904D1F63106100CB0A20 /* RedBlackNode.m in Sources */,
+				61C5904E1F63106100CB0A20 /* RedBlackTree.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61C590541F63110A00CB0A20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61C590641F63111100CB0A20 /* RBTInsertTests.m in Sources */,
+				61C5905B1F63110A00CB0A20 /* treesTests.m in Sources */,
+				61C590631F63111100CB0A20 /* RBTDeleteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		61C5905F1F63110A00CB0A20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 612B92D81F630E6B0017F2DE /* redblacktree_macOS */;
+			targetProxy = 61C5905E1F63110A00CB0A20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		612B92D01F630E140017F2DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		612B92D11F630E140017F2DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		612B92D31F630E140017F2DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R78NEXF6E2;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		612B92D41F630E140017F2DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R78NEXF6E2;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		612B92E01F630E6B0017F2DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R78NEXF6E2;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		612B92E11F630E6B0017F2DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R78NEXF6E2;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		61C590611F63110A00CB0A20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = R78NEXF6E2;
+				INFOPLIST_FILE = treesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stompor.mateusz.treesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		61C590621F63110A00CB0A20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = R78NEXF6E2;
+				INFOPLIST_FILE = treesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stompor.mateusz.treesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		612B92C41F630E130017F2DE /* Build configuration list for PBXProject "redblacktree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				612B92D01F630E140017F2DE /* Debug */,
+				612B92D11F630E140017F2DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		612B92D21F630E140017F2DE /* Build configuration list for PBXNativeTarget "redblacktree_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				612B92D31F630E140017F2DE /* Debug */,
+				612B92D41F630E140017F2DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		612B92DF1F630E6B0017F2DE /* Build configuration list for PBXNativeTarget "redblacktree_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				612B92E01F630E6B0017F2DE /* Debug */,
+				612B92E11F630E6B0017F2DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61C590601F63110A00CB0A20 /* Build configuration list for PBXNativeTarget "treesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61C590611F63110A00CB0A20 /* Debug */,
+				61C590621F63110A00CB0A20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 612B92C11F630E130017F2DE /* Project object */;
+}
