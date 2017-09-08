@@ -144,6 +144,18 @@
     }
 }
 
+-(unsigned int)countAllNodes {
+    return [self countNodesFrom:self->rootNode];
+}
+
+-(unsigned int)countNodesFrom: (RedBlackNode<id>* _Nullable) node {
+    if (node) {
+        return [self countNodesFrom:node.leftChild] + [self countNodesFrom:node.rightChild] + 1;
+    } else {
+        return 0;
+    }
+}
+
 -(RedBlackNode<id>* _Nullable)colorUntilRBTPropertiesArePreserved: (RedBlackNode<id>* _Nullable) initialNode{
     if(initialNode != nil){
         RedBlackNode<id>* uncle = [self getSiblingNode:initialNode.parent];
