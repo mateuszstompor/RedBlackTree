@@ -51,12 +51,15 @@
         RedBlackNode<id>* newPivot = pivotNode.rightChild;
         newPivot.parent = pivotNode.parent;
         if(pivotNode.parent!=nil){
-            if([self isLeftChild:pivotNode]){
-                pivotNode.parent.leftChild=newPivot;
-            }
-            else{
+            if([self isRightChild:pivotNode]){
                 pivotNode.parent.rightChild=newPivot;
             }
+            else{
+                pivotNode.parent.leftChild=newPivot;
+            }
+        }
+        else{
+            self->rootNode=newPivot;
         }
         if (newPivot.leftChild != nil){
             pivotNode.rightChild=newPivot.leftChild;
@@ -147,7 +150,6 @@
 -(unsigned int)countAllNodes {
     return [self countNodesFrom:self->rootNode];
 }
-
 -(unsigned int)countNodesFrom: (RedBlackNode<id>* _Nullable) node {
     if (node) {
         return [self countNodesFrom:node.leftChild] + [self countNodesFrom:node.rightChild] + 1;

@@ -45,22 +45,19 @@
     XCTAssertTrue([tree countAllNodes] == 3);
     XCTAssertTrue([[tree getRoot] getColor] == BLACK);
     XCTAssertTrue([tree isValid]);
-    NSLog(@"3 LOG: %@", [tree inOrder:[tree getRoot]]);
     XCTAssertTrue([[tree inOrder:[tree getRoot]] isEqualToString:@"1R 2B 3R "]);
     XCTAssertTrue([[[tree getRoot] getData] intValue] == 2);
     [tree insert:[[NSNumber alloc]initWithInt: 4]];
     XCTAssertTrue([tree countAllNodes] == 4);
-    NSLog(@"4 LOG: %@", [tree inOrder:[tree getRoot]]);
     XCTAssertTrue([[tree getRoot] getColor] == BLACK);
     XCTAssertTrue([tree isValid]);
     XCTAssertTrue([[tree inOrder:[tree getRoot]] isEqualToString:@"1B 2B 3B 4R "]);
-    NSLog(@"5 LOG: %@", [tree inOrder:[tree getRoot]]);
     XCTAssertTrue([[[tree getRoot] getData] intValue] == 2);
     [tree insert:[[NSNumber alloc]initWithInt: 5]];
     XCTAssertTrue([tree countAllNodes] == 5);
     XCTAssertTrue([tree isValid]);
     XCTAssertTrue([[tree getRoot] getColor] == BLACK);
-    XCTAssertTrue([[tree inOrder:[tree getRoot]] isEqualToString:@"1B 2B 3R 4B 5B "]);
+    XCTAssertTrue([[tree inOrder:[tree getRoot]] isEqualToString:@"1B 2B 3R 4B 5R "]);
 }
 
 -(void)testReferences {
