@@ -94,6 +94,22 @@
     XCTAssertTrue([mutStr isEqualToString:@"3 "]);
 }
 
+-(void)testZigZagRotations {
+    [tree insert:[[NSNumber alloc] initWithInt:1]];
+    XCTAssertTrue([[tree inOrder:[tree getRoot]] isEqualToString:@"1B "]);
+    [tree insert:[[NSNumber alloc] initWithInt:2]];
+    XCTAssertTrue([[tree inOrder:[tree getRoot]] isEqualToString:@"1B 2R "]);
+    [tree insert:[[NSNumber alloc] initWithInt:3]];
+    [tree insert:[[NSNumber alloc] initWithInt:55]];
+    [tree insert:[[NSNumber alloc] initWithInt:70]];
+    [tree insert:[[NSNumber alloc] initWithInt:677]];
+    XCTAssertTrue([[tree inOrder:[tree getRoot]] isEqualToString:@"1B 2B 3B 55R 70B 677R "]);
+    [tree insert:[[NSNumber alloc] initWithInt:550]];
+    XCTAssertTrue([[tree inOrder:[tree getRoot]] isEqualToString:@"1B 2B 3B 55R 70R 550B 677R "]);
+
+
+}
+
 -(void)testInsertValuesCorrect2 {
     [tree insert:[[NSNumber alloc]initWithInt: 1]];
     XCTAssertTrue([[tree inOrder:[tree getRoot]] isEqualToString:@"1B "]);

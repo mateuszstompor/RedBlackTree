@@ -17,7 +17,6 @@
 -(instancetype _Nullable)init;
 -(void) insert: (T _Nonnull) value;
 -(bool) contains: (T _Nonnull) value;
--(void) printInOrder;
 -(void) inOrderCallingBlock: ( void (^ _Nonnull)(T _Nonnull)) block;
 -(NSString* _Nonnull) inOrder: (RedBlackNode<T>* _Nullable) node;
 -(bool) isValid;
