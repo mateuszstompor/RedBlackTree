@@ -16,14 +16,6 @@
     }
     return self;
 }
--(instancetype _Nullable)initWithComparingBlock: (BOOL (^ _Nonnull)(id _Nullable, id _Nullable)) comparingBlock {
-    return nil;
-}
--(void) setRoot: (RedBlackNode<id>* _Nonnull) root{
-    if(root!=nil){
-        self->rootNode=root;
-    }
-}
 -(RedBlackNode<id>* _Nullable) getRoot{
     return self->rootNode;
 }
@@ -138,13 +130,8 @@
         else if([self isLeftChild:node]){
             return node.parent.rightChild;
         }
-        else{
-            return nil;
-        }
     }
-    else{
-        return nil;
-    }
+    return nil;
 }
 
 -(unsigned int)countAllNodes {
@@ -217,13 +204,8 @@
         if(uncle == nil || uncle.color==BLACK){
             return true;
         }
-        else{
-            return false;
-        }
     }
-    else{
-        return false;
-    }
+    return false;
 }
 -(bool) isRightChild:(RedBlackNode<id>*) node{
     if(node!=nil&&node.parent!=nil&&node.parent.rightChild==node){
@@ -257,25 +239,6 @@
         [pivot.rightChild changeColor];
     }
 }
--(RedBlackNode<id>*) getNewRoot: (RedBlackNode<id>*) node{
-    if(node!=nil){
-        while(node.parent!=nil){
-            node=node.parent;
-        }
-        return node;
-    }
-    else{
-        return nil;
-    }
-}
--(bool) isRoot: (RedBlackNode<id>*) node{
-    if(node!=nil && node.parent==nil){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
 -(NSString*) inOrder: (RedBlackNode<id>*) node{
     NSMutableString* stringToReturn = [[NSMutableString alloc] init];
     if(node!=nil){
@@ -290,25 +253,6 @@
     }
     return stringToReturn;
 }
--(void)printInOrderFrom: (RedBlackNode<id>*) node{
-    if(node!=nil){
-        [self printInOrderFrom:node.leftChild];
-        if(node.parent==nil){
-            NSLog(@"===root===");
-        }
-        if(node.color==RED){
-            NSLog(@"( d:%@ c:RED ) ", [node getData]);
-        }
-        else{
-            NSLog(@"( d:%@ c:BLACK ) ", [node getData]);
-        }
-        if(node.parent==nil){
-            NSLog(@"===end===");
-        }
-        [self printInOrderFrom:node.rightChild];
-    }
-}
-
 -(RedBlackNode<id>* _Nullable) getMinNodeFromSubtree: (RedBlackNode<id>* _Nullable) node{
     if(node!=nil){
         RedBlackNode<id>* currentMin = node;
@@ -359,9 +303,6 @@
         }
     }
     return nil;
-}
--(void) printInOrder{
-    [self printInOrderFrom:self->rootNode];
 }
 -(int) amountOfChildren: (RedBlackNode<id>* _Nonnull) node {
     if(node.leftChild != nil && node.rightChild != nil){
@@ -609,7 +550,7 @@
     [self deleteCaseOne:parentNode];
     return;
 }
--(RedBlackNode<id>* _Nonnull) insert: (id _Nonnull) value{
+-(void) insert: (id _Nonnull) value{
     RedBlackNode<id>* childToInsert = [[RedBlackNode alloc] initWithParent:nil andValue:value];
     RedBlackNode<id>* parentNode = [self findAppropriatePlaceForNewValue:value];
     [self createLinkFrom:childToInsert to:parentNode];
@@ -639,15 +580,17 @@
         }
     }
     [self->rootNode setColor:BLACK];
-    return childToInsert;
 }
--(RedBlackNode<id>* _Nonnull) insert: (id _Nonnull) value withComparingBlock: (BOOL (^ _Nonnull)(id _Nullable,id _Nullable)) comparingBlock {
-    id num1 = [[NSNumber alloc] initWithInt:2];
-    id num2 = [[NSNumber alloc] initWithInt:2];
-    BOOL resulat = comparingBlock(num1, num2);
-    return nil;
+-(void) inOrderCallingBlock: ( void (^ _Nonnull)(id _Nonnull)) block {
+    [self inOrderCallingBlock:block from:[self getRoot]];
 }
-
+-(void) inOrderCallingBlock: ( void (^ _Nonnull)(id _Nonnull)) block from: (RedBlackNode<id>*) node {
+    if(node!=nil){
+        [self inOrderCallingBlock:block from:node.leftChild];
+        block([node getData]);
+        [self inOrderCallingBlock:block from:node.rightChild];
+    }
+}
 
 //male podsumowanie
 /*

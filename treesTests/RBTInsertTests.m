@@ -58,6 +58,18 @@
     XCTAssertTrue([tree isValid]);
     XCTAssertTrue([[tree getRoot] getColor] == BLACK);
     XCTAssertTrue([[tree inOrder:[tree getRoot]] isEqualToString:@"1B 2B 3R 4B 5R "]);
+    //add 6th value
+    [tree insert:[[NSNumber alloc]initWithInt: 6]];
+    XCTAssertTrue([tree countAllNodes] == 6);
+    XCTAssertTrue([tree isValid]);
+    XCTAssertTrue([[tree getRoot] getColor] == BLACK);
+    XCTAssertTrue([[tree inOrder:[tree getRoot]] isEqualToString:@"1B 2B 3B 4R 5B 6R "]);
+    //add 7th value
+    [tree insert:[[NSNumber alloc]initWithInt: 7]];
+    XCTAssertTrue([tree countAllNodes] == 7);
+    XCTAssertTrue([tree isValid]);
+    XCTAssertTrue([[tree getRoot] getColor] == BLACK);
+    XCTAssertTrue([[tree inOrder:[tree getRoot]] isEqualToString:@"1B 2B 3B 4R 5R 6B 7R "]);
 }
 
 -(void)testReferences {
@@ -72,6 +84,14 @@
     XCTAssertNotNil([[[tempTree getRoot] rightChild] parent]);
     XCTAssertNil([[[tempTree getRoot] rightChild] leftChild]);
     XCTAssertNil([[[tempTree getRoot] rightChild] rightChild]);
+}
+
+-(void)testEnumeration {
+    __block NSMutableString* mutStr = [[NSMutableString alloc] init];
+    [tree insert:[[NSNumber alloc] initWithInt:3]];
+    void (^myBlock)(NSNumber*) = ^(NSNumber* number){[mutStr appendString:[[NSString alloc] initWithFormat:@"%i ", [number intValue]]];};
+    [tree inOrderCallingBlock:myBlock];
+    XCTAssertTrue([mutStr isEqualToString:@"3 "]);
 }
 
 -(void)testInsertValuesCorrect2 {

@@ -15,16 +15,16 @@
     RedBlackNode<T>* rootNode;
 }
 -(instancetype _Nullable)init;
--(instancetype _Nullable)initWithComparingBlock: (BOOL (^ _Nonnull)(T _Nullable,T _Nullable)) comparingBlock;
--(RedBlackNode<T>* _Nonnull) insert: (T _Nonnull) value;
--(bool)contains: (T _Nonnull) value;
+-(void) insert: (T _Nonnull) value;
+-(bool) contains: (T _Nonnull) value;
 -(void) printInOrder;
+-(void) inOrderCallingBlock: ( void (^ _Nonnull)(T _Nonnull)) block;
 -(NSString* _Nonnull) inOrder: (RedBlackNode<T>* _Nullable) node;
 -(bool) isValid;
 -(void) deleteValue: (T _Nonnull) value;
 -(RedBlackNode<T>* _Nullable) binaryDelete: (T _Nonnull) value OptionalPointerToNode: (RedBlackNode<T>* _Nullable) node;
 -(RedBlackNode<T>* _Nullable) getRoot;
--(unsigned int)countAllNodes;
+-(unsigned int) countAllNodes;
 @end
 
 #endif /* RedBlackTree_h */
