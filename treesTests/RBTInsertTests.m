@@ -61,7 +61,17 @@
 }
 
 -(void)testReferences {
-    
+    RedBlackTree<NSNumber*>* tempTree = [[RedBlackTree alloc] init];
+    XCTAssertTrue([tempTree getRoot] == nil);
+    [tempTree insert:[[NSNumber alloc] initWithInt:2]];
+    XCTAssertNil([[tempTree getRoot] parent]);
+    [tempTree insert:[[NSNumber alloc] initWithInt:3]];
+    XCTAssertNil([[tempTree getRoot] parent]);
+    XCTAssertNil([[tempTree getRoot] leftChild]);
+    XCTAssertNotNil([[tempTree getRoot] rightChild]);
+    XCTAssertNotNil([[[tempTree getRoot] rightChild] parent]);
+    XCTAssertNil([[[tempTree getRoot] rightChild] leftChild]);
+    XCTAssertNil([[[tempTree getRoot] rightChild] rightChild]);
 }
 
 -(void)testInsertValuesCorrect2 {

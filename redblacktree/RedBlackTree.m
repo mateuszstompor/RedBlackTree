@@ -9,15 +9,15 @@
 #import "RedBlackTree.h"
 
 @implementation RedBlackTree
--(instancetype _Nonnull)init {
+-(instancetype _Nullable)init {
     self = [super init];
-    self->rootNode = nil;
+    if (self) {
+        self->rootNode = nil;
+    }
     return self;
 }
--(instancetype _Nonnull)initWithValue: (id _Nonnull) value{
-    self = [self init];
-    [self insert:value];
-    return self;
+-(instancetype _Nullable)initWithComparingBlock: (BOOL (^ _Nonnull)(id _Nullable, id _Nullable)) comparingBlock {
+    return nil;
 }
 -(void) setRoot: (RedBlackNode<id>* _Nonnull) root{
     if(root!=nil){
@@ -641,7 +641,12 @@
     [self->rootNode setColor:BLACK];
     return childToInsert;
 }
-
+-(RedBlackNode<id>* _Nonnull) insert: (id _Nonnull) value withComparingBlock: (BOOL (^ _Nonnull)(id _Nullable,id _Nullable)) comparingBlock {
+    id num1 = [[NSNumber alloc] initWithInt:2];
+    id num2 = [[NSNumber alloc] initWithInt:2];
+    BOOL resulat = comparingBlock(num1, num2);
+    return nil;
+}
 
 
 //male podsumowanie

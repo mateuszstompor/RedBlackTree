@@ -14,8 +14,8 @@
 {
     RedBlackNode<T>* rootNode;
 }
--(instancetype _Nonnull)init;
--(instancetype _Nonnull)initWithValue: (T _Nonnull) value;
+-(instancetype _Nullable)init;
+-(instancetype _Nullable)initWithComparingBlock: (BOOL (^ _Nonnull)(T _Nullable,T _Nullable)) comparingBlock;
 -(RedBlackNode<T>* _Nonnull) insert: (T _Nonnull) value;
 -(bool)contains: (T _Nonnull) value;
 -(void) printInOrder;
