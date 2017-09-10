@@ -23,6 +23,7 @@
 -(void) deleteValue: (T _Nonnull) value;
 -(RedBlackNode<T>* _Nullable) binaryDelete: (T _Nonnull) value OptionalPointerToNode: (RedBlackNode<T>* _Nullable) node;
 -(RedBlackNode<T>* _Nullable) getRoot;
+-(NSString* _Nonnull) stringFromInOrder;
 -(unsigned int) countAllNodes;
 @end
 

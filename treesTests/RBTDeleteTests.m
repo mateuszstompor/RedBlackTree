@@ -29,7 +29,7 @@
 - (void)testAddRootAndDelete {
     [tree insert:[[NSNumber alloc]initWithInt: 34]];
     [tree deleteValue:[[NSNumber alloc]initWithInt: 34]];
-    XCTAssertTrue([[tree inOrder:[tree getRoot]] isEqualToString:@""]);
+    XCTAssertTrue([[tree stringFromInOrder] isEqualToString:@""]);
 }
 
 @end

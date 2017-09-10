@@ -275,6 +275,9 @@
         return false;
     }
 }
+-(NSString* _Nonnull) stringFromInOrder{
+    return [self inOrder:[self getRoot]];
+}
 -(RedBlackNode<id>* _Nullable) searchFor: (id _Nonnull) value{
     RedBlackNode<id>* initialNode = self->rootNode;
     while(initialNode!=nil){
