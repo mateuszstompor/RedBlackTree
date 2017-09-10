@@ -20,7 +20,15 @@
 
 - (void)setUp {
     [super setUp];
-    tree= [[RedBlackTree alloc] init];
+    tree = [[RedBlackTree alloc] initWithComparingBlock:^(NSNumber* a,NSNumber* b){
+        if( [a isGreaterThan:b] ){
+            return 1;
+        } else if ( [a isEqual:b] ){
+            return 0;
+        } else {
+            return -1;
+        }
+    }];
 }
 
 - (void)tearDown {
@@ -73,7 +81,15 @@
 }
 
 -(void)testReferences {
-    RedBlackTree<NSNumber*>* tempTree = [[RedBlackTree alloc] init];
+    RedBlackTree<NSNumber*>* tempTree = [[RedBlackTree alloc] initWithComparingBlock:^(NSNumber* a,NSNumber* b){
+        if( [a isGreaterThan:b] ){
+            return 1;
+        } else if ( [a isEqual:b] ){
+            return 0;
+        } else {
+            return -1;
+        }
+    }];
     XCTAssertTrue([tempTree getRoot] == nil);
     [tempTree insert:[[NSNumber alloc] initWithInt:2]];
     XCTAssertNil([[tempTree getRoot] parent]);

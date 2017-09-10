@@ -9,10 +9,11 @@
 #import "RedBlackTree.h"
 
 @implementation RedBlackTree
--(instancetype _Nullable)init {
+-(instancetype _Nullable)initWithComparingBlock: ( int (^ _Nonnull)(id _Nonnull a, id _Nonnull b)) block{
     self = [super init];
     if (self) {
         self->rootNode = nil;
+        self->_comparingFunction = block;
     }
     return self;
 }
@@ -97,9 +98,9 @@
     }
     else{
         RedBlackNode<id>* currentNode = self->rootNode;
-        while(([value isGreaterThan:[currentNode getData]] && currentNode.rightChild!=nil)||
-              ([value isLessThan:[currentNode getData]] && currentNode.leftChild!=nil)){
-            if([value isGreaterThan:[currentNode getData]]){
+        while(((self->_comparingFunction(value, [currentNode getData])>0) && currentNode.rightChild!=nil)||
+              ((self->_comparingFunction(value, [currentNode getData])<0) && currentNode.leftChild!=nil)){
+            if(self->_comparingFunction(value, [currentNode getData])>0){
                 currentNode=currentNode.rightChild;
             }
             else{
@@ -113,7 +114,7 @@
     if(parent == nil){
         self->rootNode=child;
     }else{
-        if([[child getData] isGreaterThan:[parent getData]]){
+        if((self->_comparingFunction([child getData], [parent getData])>0)){
             parent.rightChild=child;
         }
         else{

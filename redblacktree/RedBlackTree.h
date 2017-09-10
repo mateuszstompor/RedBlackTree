@@ -14,11 +14,13 @@
 {
     RedBlackNode<T>* rootNode;
 }
--(instancetype _Nullable)init;
+@property (nonatomic, copy) int (^ _Nonnull comparingFunction)(T _Nonnull, T _Nonnull);
+
+-(instancetype _Nullable)init NS_UNAVAILABLE;
+-(instancetype _Nullable)initWithComparingBlock: ( int (^ _Nonnull)(T _Nonnull a, T _Nonnull b)) block;
 -(void) insert: (T _Nonnull) value;
 -(bool) contains: (T _Nonnull) value;
 -(void) inOrderCallingBlock: ( void (^ _Nonnull)(T _Nonnull)) block;
--(NSString* _Nonnull) inOrder: (RedBlackNode<T>* _Nullable) node;
 -(bool) isValid;
 -(void) deleteValue: (T _Nonnull) value;
 -(RedBlackNode<T>* _Nullable) binaryDelete: (T _Nonnull) value OptionalPointerToNode: (RedBlackNode<T>* _Nullable) node;
