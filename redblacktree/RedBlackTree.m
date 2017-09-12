@@ -259,7 +259,7 @@
         RedBlackNode<id>* currentMin = node;
         node=node.leftChild;
         while(node!=nil){
-            if([[node getData] isLessThan:[currentMin getData]]){
+            if(self->_comparingFunction([node getData], [currentMin getData])<0){
                 currentMin=node;
             }
             node=node.leftChild;
@@ -280,26 +280,14 @@
     return [self inOrder:[self getRoot]];
 }
 -(RedBlackNode<id>* _Nullable) searchFor: (id _Nonnull) value{
-    RedBlackNode<id>* initialNode = self->rootNode;
-    while(initialNode!=nil){
-        if([value isEqual:[initialNode getData]]){
-            return initialNode;
-        }
-        else if([value isGreaterThan:[initialNode getData]]){
-            initialNode=initialNode.rightChild;
-        }
-        else{
-            initialNode=initialNode.leftChild;
-        }
-    }
-    return nil;
+    return [self searchFor:value from:self->rootNode];
 }
 -(RedBlackNode<id>* _Nullable) searchFor: (id _Nonnull) value from: (RedBlackNode<id>* _Nonnull) initialNode{
     while(initialNode!=nil){
         if([value isEqual:[initialNode getData]]){
             return initialNode;
         }
-        else if([value isGreaterThan:[initialNode getData]]){
+        else if(self->_comparingFunction(value, [initialNode getData])>0){
             initialNode=initialNode.rightChild;
         }
         else{
