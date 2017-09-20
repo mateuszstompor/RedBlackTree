@@ -16,7 +16,6 @@
 		61C590511F63108500CB0A20 /* RedBlackColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C590451F63104300CB0A20 /* RedBlackColor.h */; };
 		61C590521F63108500CB0A20 /* RedBlackNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C590461F63104300CB0A20 /* RedBlackNode.h */; };
 		61C590531F63108500CB0A20 /* RedBlackTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C590441F63104300CB0A20 /* RedBlackTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		61C5905B1F63110A00CB0A20 /* treesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C5905A1F63110A00CB0A20 /* treesTests.m */; };
 		61C5905D1F63110A00CB0A20 /* libredblacktree_macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 612B92D91F630E6B0017F2DE /* libredblacktree_macOS.a */; };
 		61C590631F63111100CB0A20 /* RBTDeleteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C590481F63104E00CB0A20 /* RBTDeleteTests.m */; };
 		61C590641F63111100CB0A20 /* RBTInsertTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C590471F63104E00CB0A20 /* RBTInsertTests.m */; };
@@ -274,7 +273,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				61C590641F63111100CB0A20 /* RBTInsertTests.m in Sources */,
-				61C5905B1F63110A00CB0A20 /* treesTests.m in Sources */,
 				61C590631F63111100CB0A20 /* RBTDeleteTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

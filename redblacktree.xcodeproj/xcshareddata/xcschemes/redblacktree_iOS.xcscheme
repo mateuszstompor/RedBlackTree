@@ -33,9 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "612B93021F630F130017F2DE"
-               BuildableName = "iosTests.xctest"
-               BlueprintName = "iosTests"
+               BlueprintIdentifier = "61C590571F63110A00CB0A20"
+               BuildableName = "treesTests.xctest"
+               BlueprintName = "treesTests"
                ReferencedContainer = "container:redblacktree.xcodeproj">
             </BuildableReference>
          </TestableReference>
