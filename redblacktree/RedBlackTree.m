@@ -7,13 +7,6 @@
 //
 #import <Foundation/Foundation.h>
 #import "RedBlackTree.h"
-#import "RedBlackNode.h"
-
-@interface RedBlackTree ()
-{
-    RedBlackNode<id>* rootNode;
-}
-@end
 
 @implementation RedBlackTree
 -(instancetype _Nullable)initWithComparingBlock: ( int (^ _Nonnull)(id _Nonnull a, id _Nonnull b)) block{
