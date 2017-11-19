@@ -1,5 +1,5 @@
-# redblacktreeLibrary
-My implementation of RedBlackTree data structure
+# Red Black Tree
+Repository contains my implementation of this data structure.
 
 23.09.2017 - alpha, Version 1.0
 Only insert operation works correctly. Project embeds tests.
