@@ -1,0 +1,11 @@
+language: objective-c
+
+branches:
+ only:
+ - master
+
+xcode_project: redblacktree.xcodeproj
+xcode_scheme: treesTests
+
+script:
+- xcodebuild clean build test -project redblacktree.xcodeproj -scheme treesTests
