@@ -7,6 +7,7 @@
 //
 #import <Foundation/Foundation.h>
 #import "RedBlackTree.h"
+#import "RedBlackNode.h"
 
 @interface RedBlackTree ()
 {

@@ -24,21 +24,21 @@
     self.rightChild=nil;
     return self;
 }
+
 -(NodeColor) getColor{
     return self.color;
 }
+
 -(void) changeColor{
-    if(self.color==RED){
-        self.color=BLACK;
-    }
-    else{
-        self.color=RED;
-    }
+    self.color = self.color == RED ? BLACK : RED;
 }
+
 -(id _Nonnull) getData{
     return self->containedData;
 }
+
 -(void) setData:(id)data{
     self->containedData=data;
 }
+
 @end

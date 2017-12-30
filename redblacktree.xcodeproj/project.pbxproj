@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56C22B2B1FF71EB00035E6A5 /* redblacktree_framework_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 56C22B291FF71EB00035E6A5 /* redblacktree_framework_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56C22B2F1FF71EBC0035E6A5 /* RedBlackNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C590421F63104300CB0A20 /* RedBlackNode.m */; };
+		56C22B301FF71EBC0035E6A5 /* RedBlackTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C590431F63104300CB0A20 /* RedBlackTree.m */; };
+		56C22B311FF71EC80035E6A5 /* RedBlackColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C590451F63104300CB0A20 /* RedBlackColor.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		56C22B321FF71EC80035E6A5 /* RedBlackNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C590461F63104300CB0A20 /* RedBlackNode.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		56C22B331FF71EC80035E6A5 /* RedBlackTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C590441F63104300CB0A20 /* RedBlackTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		612B93121F630FA10017F2DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612B93111F630FA10017F2DE /* Foundation.framework */; };
 		61C5904D1F63106100CB0A20 /* RedBlackNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C590421F63104300CB0A20 /* RedBlackNode.m */; };
 		61C5904E1F63106100CB0A20 /* RedBlackTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C590431F63104300CB0A20 /* RedBlackTree.m */; };
@@ -43,6 +49,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		56C22B271FF71EB00035E6A5 /* redblacktree_framework_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = redblacktree_framework_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56C22B291FF71EB00035E6A5 /* redblacktree_framework_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = redblacktree_framework_macOS.h; sourceTree = "<group>"; };
+		56C22B2A1FF71EB00035E6A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		612B92C91F630E140017F2DE /* libredblacktree_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libredblacktree_iOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		612B92D91F630E6B0017F2DE /* libredblacktree_macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libredblacktree_macOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		612B93111F630FA10017F2DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -59,6 +68,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		56C22B231FF71EB00035E6A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		612B92C61F630E140017F2DE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,11 +101,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56C22B281FF71EB00035E6A5 /* redblacktree_framework_macOS */ = {
+			isa = PBXGroup;
+			children = (
+				56C22B291FF71EB00035E6A5 /* redblacktree_framework_macOS.h */,
+				56C22B2A1FF71EB00035E6A5 /* Info.plist */,
+			);
+			path = redblacktree_framework_macOS;
+			sourceTree = "<group>";
+		};
 		612B92C01F630E130017F2DE = {
 			isa = PBXGroup;
 			children = (
 				612B92CB1F630E140017F2DE /* redblacktree */,
 				61C590591F63110A00CB0A20 /* treesTests */,
+				56C22B281FF71EB00035E6A5 /* redblacktree_framework_macOS */,
 				612B92CA1F630E140017F2DE /* Products */,
 				612B93101F630FA10017F2DE /* Frameworks */,
 			);
@@ -101,6 +127,7 @@
 				612B92C91F630E140017F2DE /* libredblacktree_iOS.a */,
 				612B92D91F630E6B0017F2DE /* libredblacktree_macOS.a */,
 				61C590581F63110A00CB0A20 /* treesTests.xctest */,
+				56C22B271FF71EB00035E6A5 /* redblacktree_framework_macOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +166,17 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		56C22B241FF71EB00035E6A5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56C22B2B1FF71EB00035E6A5 /* redblacktree_framework_macOS.h in Headers */,
+				56C22B331FF71EC80035E6A5 /* RedBlackTree.h in Headers */,
+				56C22B321FF71EC80035E6A5 /* RedBlackNode.h in Headers */,
+				56C22B311FF71EC80035E6A5 /* RedBlackColor.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		612B92D71F630E6B0017F2DE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,6 +190,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		56C22B261FF71EB00035E6A5 /* redblacktree_framework_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56C22B2E1FF71EB00035E6A5 /* Build configuration list for PBXNativeTarget "redblacktree_framework_macOS" */;
+			buildPhases = (
+				56C22B221FF71EB00035E6A5 /* Sources */,
+				56C22B231FF71EB00035E6A5 /* Frameworks */,
+				56C22B241FF71EB00035E6A5 /* Headers */,
+				56C22B251FF71EB00035E6A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = redblacktree_framework_macOS;
+			productName = redblacktree_framework_macOS;
+			productReference = 56C22B271FF71EB00035E6A5 /* redblacktree_framework_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		612B92C81F630E140017F2DE /* redblacktree_iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 612B92D21F630E140017F2DE /* Build configuration list for PBXNativeTarget "redblacktree_iOS" */;
@@ -213,6 +269,10 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Mateusz Stompór";
 				TargetAttributes = {
+					56C22B261FF71EB00035E6A5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					612B92C81F630E140017F2DE = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -241,10 +301,21 @@
 			targets = (
 				612B92C81F630E140017F2DE /* redblacktree_iOS */,
 				612B92D81F630E6B0017F2DE /* redblacktree_macOS */,
+				56C22B261FF71EB00035E6A5 /* redblacktree_framework_macOS */,
 				61C590571F63110A00CB0A20 /* treesTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		56C22B251FF71EB00035E6A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		6196F9971F75C6AC005DC669 /* ShellScript */ = {
@@ -263,6 +334,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		56C22B221FF71EB00035E6A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56C22B2F1FF71EBC0035E6A5 /* RedBlackNode.m in Sources */,
+				56C22B301FF71EBC0035E6A5 /* RedBlackTree.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		612B92C51F630E140017F2DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -301,6 +381,63 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		56C22B2C1FF71EB00035E6A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = R78NEXF6E2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = redblacktree_framework_macOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stompor.mateusz.redblacktree-framework-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		56C22B2D1FF71EB00035E6A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = R78NEXF6E2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = redblacktree_framework_macOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stompor.mateusz.redblacktree-framework-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		612B92D01F630E140017F2DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -490,6 +627,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		56C22B2E1FF71EB00035E6A5 /* Build configuration list for PBXNativeTarget "redblacktree_framework_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56C22B2C1FF71EB00035E6A5 /* Debug */,
+				56C22B2D1FF71EB00035E6A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		612B92C41F630E130017F2DE /* Build configuration list for PBXProject "redblacktree" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
