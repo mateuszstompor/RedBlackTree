@@ -8,10 +8,14 @@
 #pragma once
 
 @interface RedBlackTree<T> : NSObject
+{
+    NSUInteger count;
+}
 
-@property (readonly) NSUInteger count;
+@property (nonatomic, readonly) NSUInteger count;
 
 - (instancetype _Nullable)          init;
-- (void)                            add: (T _Nonnull) object;
+- (void)                            addObject: (T _Nonnull) anObject;
+- (BOOL)                            containsObject: (T _Nonnull) anObject;
 
 @end

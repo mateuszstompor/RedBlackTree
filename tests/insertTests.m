@@ -33,12 +33,76 @@
 }
 
 - (void) testInsertionToEmptyTree {
-    [tree add: [NSNumber numberWithInt:3]];
+    [tree addObject: [NSNumber numberWithInt:3]];
+    
     XCTAssertNotNil([tree root]);
     XCTAssertEqual([[tree root] color], BLACK);
     XCTAssertNil([[tree root] parent]);
     XCTAssertNil([[tree root] left]);
     XCTAssertNil([[tree root] right]);
+}
+
+- (void) testInsertionOnParentAndRightChild {
+    [tree addObject: [NSNumber numberWithInt:3]];
+    [tree addObject: [NSNumber numberWithInt:4]];
+    
+    XCTAssertEqual([[tree root] color], BLACK);
+    XCTAssertEqual([[[tree root] right] color], RED);
+    XCTAssertEqual([[[tree root] right] parent], [tree root]);
+}
+
+- (void) testInsertionOnParentAndLeftChild {
+    [tree addObject: [NSNumber numberWithInt:3]];
+    [tree addObject: [NSNumber numberWithInt:2]];
+    
+    XCTAssertEqual([[tree root] color], BLACK);
+    XCTAssertEqual([[[tree root] left] color], RED);
+    XCTAssertEqual([[[tree root] left] parent], [tree root]);
+}
+
+- (void) testInsertionZakZakRotation {
+    [tree addObject: [NSNumber numberWithInt:3]];
+    [tree addObject: [NSNumber numberWithInt:4]];
+    [tree addObject: [NSNumber numberWithInt:5]];
+    
+    XCTAssertEqual([[tree root] color], BLACK);
+    XCTAssertEqual([[[tree root] right] color], RED);
+    XCTAssertEqual([[[tree root] left] color], RED);
+}
+
+- (void) testInsertionOnValuesAfterZigZakRotation {
+    [tree addObject: [NSNumber numberWithInt:1]];
+    [tree addObject: [NSNumber numberWithInt:3]];
+    [tree addObject: [NSNumber numberWithInt:2]];
+    
+    XCTAssertEqual([[[tree root] data] intValue], 2);
+    XCTAssertEqual([[[[tree root] left] data] intValue], 1);
+    XCTAssertEqual([[[[tree root] right] data] intValue], 3);
+}
+
+- (void) testInsertionOnColorsAfterZigZakRotation {
+    [tree addObject: [NSNumber numberWithInt:1]];
+    [tree addObject: [NSNumber numberWithInt:3]];
+    [tree addObject: [NSNumber numberWithInt:2]];
+    
+    XCTAssertEqual([[tree root] color], BLACK);
+    XCTAssertEqual([[[tree root] left] color], RED);
+    XCTAssertEqual([[[tree root] right] color], RED);
+}
+
+- (void) testInsertionOnStructureAfterZigZakRotation {
+    [tree addObject: [NSNumber numberWithInt:1]];
+    [tree addObject: [NSNumber numberWithInt:3]];
+    [tree addObject: [NSNumber numberWithInt:2]];
+    
+    XCTAssertNil([[[tree root] left] left]);
+    XCTAssertNil([[[tree root] left] right]);
+    
+    XCTAssertNil([[[tree root] right] left]);
+    XCTAssertNil([[[tree root] right] right]);
+    
+    XCTAssertEqual([tree root], [[[tree root] right] parent]);
+    XCTAssertEqual([tree root], [[[tree root] left] parent]);
 }
 
 @end

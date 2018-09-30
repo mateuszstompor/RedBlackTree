@@ -1,4 +1,6 @@
 # Red Black Tree
+###### Tests status
+[![Build Status](https://www.travis-ci.org/mateuszstompor/RedBlackTree.svg?branch=master)](https://www.travis-ci.org/mateuszstompor/RedBlackTree)
 <p align="center">
   <img src="https://image.ibb.co/n0LNG5/rbt.png">
 </p>
@@ -16,10 +18,10 @@ macOS framework made in a way similar to all foundation containers. It is generi
 ```objective-c
 @interface RedBlackTree<T> : NSObject
 
-@property (readonly) NSUInteger count;
+@property (nonatomic, readonly) NSUInteger count;
 
 - (instancetype)          init;
-- (void)                  add: (id) object;
+- (void)                  addObject: (id) object;
 
 @end
 ```
@@ -38,7 +40,13 @@ int main(int argc, const char * argv[]) {
         tree = [[RedBlackTree alloc] init];
 
         // add an element
-        [tree add: [NSNumber numberWithInt:3]];
+        [tree addObject: [NSNumber numberWithInt:3]];
+
+        // count elements
+        [tree count];
+
+        // check if it contains an object
+        [tree containsObject: [NSNumber numberWithInt:3]];
     }
     return 0;
 }
