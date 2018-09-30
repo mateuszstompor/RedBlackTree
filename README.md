@@ -1,4 +1,6 @@
 # Red Black Tree
+###### Tests status
+[![Build Status](https://www.travis-ci.org/mateuszstompor/RedBlackTree.svg?branch=master)](https://www.travis-ci.org/mateuszstompor/RedBlackTree)
 <p align="center">
   <img src="https://image.ibb.co/n0LNG5/rbt.png">
 </p>
