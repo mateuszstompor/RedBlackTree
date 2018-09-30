@@ -17,5 +17,6 @@
 - (instancetype _Nullable)          init;
 - (void)                            addObject: (T _Nonnull) anObject;
 - (BOOL)                            containsObject: (T _Nonnull) anObject;
+- (void)                            removeObject: (T _Nonnull) anObject;
 
 @end
