@@ -18,7 +18,7 @@
 @implementation InitializerTests
 
 - (void)testDefaultInitializer {
-    id tree = [[RedBlackTree alloc] init];
+    tree = [[RedBlackTree alloc] init];
     XCTAssertNotNil(tree);
 }
 

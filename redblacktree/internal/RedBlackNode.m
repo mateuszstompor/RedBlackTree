@@ -11,24 +11,32 @@
 
 @synthesize color       = color;
 @synthesize data        = data;
-@synthesize left   = left;
-@synthesize right  = right;
+@synthesize left        = left;
+@synthesize right       = right;
 @synthesize parent      = parent;
 
 -(instancetype _Nonnull)initWithParent: (RedBlackNode<id> * _Nullable) parent andValue: (id _Nonnull) value {
     self = [self init];
     if(self) {
-        data       = value;
-        color      = RED;
-        left  = nil;
-        parent     = nil;
-        right = nil;
+        data    = value;
+        color   = RED;
+        left    = nil;
+        parent  = nil;
+        right   = nil;
     }
     return self;
 }
 
 -(void) swapColor {
     color = color == RED ? BLACK : RED;
+}
+
+- (BOOL) isRight {
+    return parent && parent.right == self;
+}
+
+- (BOOL) isLeft {
+    return parent && parent.left == self;
 }
 
 @end

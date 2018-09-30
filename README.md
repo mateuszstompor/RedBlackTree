@@ -18,10 +18,10 @@ macOS framework made in a way similar to all foundation containers. It is generi
 ```objective-c
 @interface RedBlackTree<T> : NSObject
 
-@property (readonly) NSUInteger count;
+@property (nonatomic, readonly) NSUInteger count;
 
 - (instancetype)          init;
-- (void)                  add: (id) object;
+- (void)                  addObject: (id) object;
 
 @end
 ```
@@ -40,7 +40,10 @@ int main(int argc, const char * argv[]) {
         tree = [[RedBlackTree alloc] init];
 
         // add an element
-        [tree add: [NSNumber numberWithInt:3]];
+        [tree addObject: [NSNumber numberWithInt:3]];
+
+        // count elements
+        [tree count];
     }
     return 0;
 }

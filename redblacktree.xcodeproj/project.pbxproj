@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5609F9D921605BF200EF9118 /* countTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9D821605BF200EF9118 /* countTests.m */; };
+		5609F9DB2160650200EF9118 /* containsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9DA2160650200EF9118 /* containsTests.m */; };
 		563FB8362160406000D61390 /* NodeColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 563FB8322160406000D61390 /* NodeColor.h */; };
 		563FB8372160406000D61390 /* RedBlackNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 563FB8332160406000D61390 /* RedBlackNode.h */; };
 		563FB8382160406000D61390 /* RedBlackNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 563FB8342160406000D61390 /* RedBlackNode.m */; };
@@ -18,6 +20,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5609F9CE21605B6C00EF9118 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5609F9D021605B6C00EF9118 /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
+		5609F9D121605B6C00EF9118 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5609F9D221605B6C00EF9118 /* report.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = report.xml; sourceTree = "<group>"; };
+		5609F9D421605B6C00EF9118 /* report.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = report.html; sourceTree = "<group>"; };
+		5609F9D521605B6C00EF9118 /* report.junit */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = report.junit; sourceTree = "<group>"; };
+		5609F9D621605B6C00EF9118 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
+		5609F9D721605B6C00EF9118 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
+		5609F9D821605BF200EF9118 /* countTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = countTests.m; sourceTree = "<group>"; };
+		5609F9DA2160650200EF9118 /* containsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = containsTests.m; sourceTree = "<group>"; };
 		563FB8322160406000D61390 /* NodeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeColor.h; sourceTree = "<group>"; };
 		563FB8332160406000D61390 /* RedBlackNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedBlackNode.h; sourceTree = "<group>"; };
 		563FB8342160406000D61390 /* RedBlackNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedBlackNode.m; sourceTree = "<group>"; };
@@ -29,7 +41,7 @@
 		612B93111F630FA10017F2DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		61C590441F63104300CB0A20 /* RedBlackTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedBlackTree.h; sourceTree = "<group>"; };
 		61C590471F63104E00CB0A20 /* insertTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = insertTests.m; sourceTree = "<group>"; };
-		61C590581F63110A00CB0A20 /* treesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = treesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		61C590581F63110A00CB0A20 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C5905C1F63110A00CB0A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +63,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5609F9CF21605B6C00EF9118 /* fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				5609F9D021605B6C00EF9118 /* Fastfile */,
+				5609F9D121605B6C00EF9118 /* README.md */,
+				5609F9D221605B6C00EF9118 /* report.xml */,
+				5609F9D321605B6C00EF9118 /* test_output */,
+			);
+			path = fastlane;
+			sourceTree = "<group>";
+		};
+		5609F9D321605B6C00EF9118 /* test_output */ = {
+			isa = PBXGroup;
+			children = (
+				5609F9D421605B6C00EF9118 /* report.html */,
+				5609F9D521605B6C00EF9118 /* report.junit */,
+			);
+			path = test_output;
+			sourceTree = "<group>";
+		};
 		563FB8312160406000D61390 /* internal */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +109,10 @@
 				612B92CB1F630E140017F2DE /* redblacktree */,
 				61C590591F63110A00CB0A20 /* tests */,
 				56C22B281FF71EB00035E6A5 /* redblacktree_macOS */,
+				5609F9CF21605B6C00EF9118 /* fastlane */,
+				5609F9D621605B6C00EF9118 /* Gemfile */,
+				5609F9D721605B6C00EF9118 /* Gemfile.lock */,
+				5609F9CE21605B6C00EF9118 /* README.md */,
 				612B92CA1F630E140017F2DE /* Products */,
 				612B93101F630FA10017F2DE /* Frameworks */,
 			);
@@ -85,7 +121,7 @@
 		612B92CA1F630E140017F2DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				61C590581F63110A00CB0A20 /* treesTests.xctest */,
+				61C590581F63110A00CB0A20 /* tests.xctest */,
 				56C22B271FF71EB00035E6A5 /* redblacktree_macOS.framework */,
 			);
 			name = Products;
@@ -113,6 +149,8 @@
 			children = (
 				61C590471F63104E00CB0A20 /* insertTests.m */,
 				563FB83A216045A800D61390 /* initializerTests.m */,
+				5609F9D821605BF200EF9118 /* countTests.m */,
+				5609F9DA2160650200EF9118 /* containsTests.m */,
 				61C5905C1F63110A00CB0A20 /* Info.plist */,
 			);
 			path = tests;
@@ -153,9 +191,9 @@
 			productReference = 56C22B271FF71EB00035E6A5 /* redblacktree_macOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		61C590571F63110A00CB0A20 /* treesTests */ = {
+		61C590571F63110A00CB0A20 /* tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 61C590601F63110A00CB0A20 /* Build configuration list for PBXNativeTarget "treesTests" */;
+			buildConfigurationList = 61C590601F63110A00CB0A20 /* Build configuration list for PBXNativeTarget "tests" */;
 			buildPhases = (
 				61C590541F63110A00CB0A20 /* Sources */,
 				61C590551F63110A00CB0A20 /* Frameworks */,
@@ -164,9 +202,9 @@
 			);
 			dependencies = (
 			);
-			name = treesTests;
+			name = tests;
 			productName = treesTests;
-			productReference = 61C590581F63110A00CB0A20 /* treesTests.xctest */;
+			productReference = 61C590581F63110A00CB0A20 /* tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -201,7 +239,7 @@
 			projectRoot = "";
 			targets = (
 				56C22B261FF71EB00035E6A5 /* redblacktree_macOS */,
-				61C590571F63110A00CB0A20 /* treesTests */,
+				61C590571F63110A00CB0A20 /* tests */,
 			);
 		};
 /* End PBXProject section */
@@ -230,8 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5609F9DB2160650200EF9118 /* containsTests.m in Sources */,
 				61C590641F63111100CB0A20 /* insertTests.m in Sources */,
 				563FB83B216045A800D61390 /* initializerTests.m in Sources */,
+				5609F9D921605BF200EF9118 /* countTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +494,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		61C590601F63110A00CB0A20 /* Build configuration list for PBXNativeTarget "treesTests" */ = {
+		61C590601F63110A00CB0A20 /* Build configuration list for PBXNativeTarget "tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				61C590611F63110A00CB0A20 /* Debug */,

@@ -21,5 +21,7 @@
 
 - (instancetype _Nonnull)   initWithParent: (RedBlackNode <T> * _Nullable) parent andValue: (T _Nonnull) value;
 - (void)                    swapColor;
+- (BOOL)                    isRight;
+- (BOOL)                    isLeft;
 
 @end

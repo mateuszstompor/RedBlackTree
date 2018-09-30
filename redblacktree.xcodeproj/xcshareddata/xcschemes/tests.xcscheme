@@ -17,8 +17,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "61C590571F63110A00CB0A20"
-               BuildableName = "treesTests.xctest"
-               BlueprintName = "treesTests"
+               BuildableName = "tests.xctest"
+               BlueprintName = "tests"
                ReferencedContainer = "container:redblacktree.xcodeproj">
             </BuildableReference>
          </TestableReference>
