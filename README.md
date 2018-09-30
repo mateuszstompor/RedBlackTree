@@ -1,7 +1,46 @@
 # Red Black Tree
-Repository contains my implementation of this data structure.
+<p align="center">
+  <img src="https://image.ibb.co/n0LNG5/rbt.png">
+</p>
 
-23.09.2017 - alpha, Version 1.0
-Only insert operation works correctly. Project embeds tests.
+## Features
+<ul>
+    <li>Objective-C 2.0 (with ARC)</li>
+    <li>Unit-Tests</li>
+</ul>
 
-![Alt text](https://image.ibb.co/n0LNG5/rbt.png "Date: 23.09.2017")
+## About
+macOS framework made in a way similar to all foundation containers. It is generic data structure, has interface similar to all other foundation containers and is tested.
+
+## Interface
+```objective-c
+@interface RedBlackTree<T> : NSObject
+
+@property (readonly) NSUInteger count;
+
+- (instancetype)          init;
+- (void)                  add: (id) object;
+
+@end
+```
+
+
+## Example usage
+
+```objective-c
+
+#import <RedBlackTree/RedBlackTree.h>
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        // initialize
+        RedBlackTree<NSNumber*>* tree;
+        tree = [[RedBlackTree alloc] init];
+
+        // add an element
+        [tree add: [NSNumber numberWithInt:3]];
+    }
+    return 0;
+}
+
+```
