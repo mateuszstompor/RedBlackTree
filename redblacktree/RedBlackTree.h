@@ -5,22 +5,13 @@
 //  Created by Mateusz Stompór on 29/03/2017.
 //  Copyright © 2017 Mateusz Stompór. All rights reserved.
 
-#ifndef RedBlackTree_h
-#define RedBlackTree_h
+#pragma once
+
 @interface RedBlackTree<T> : NSObject
 
-@property (nonatomic, nonnull, copy) int (^comparingFunction)(T _Nonnull, T _Nonnull);
+@property (readonly) NSUInteger count;
 
-- (instancetype _Nullable)init NS_UNAVAILABLE;
-- (instancetype _Nullable)initWithComparingBlock: ( int (^ _Nonnull)(T _Nonnull a, T _Nonnull b)) block;
-- (void) insert: (T _Nonnull) value;
-- (bool) contains: (T _Nonnull) value;
-- (void) inOrderCallingBlock: ( void (^ _Nonnull)(T _Nonnull)) block;
-- (bool) isValid;
-- (void) deleteValue: (T _Nonnull) value;
-- (NSString* _Nonnull) stringFromInOrder;
-- (unsigned int) countAllNodes;
+- (instancetype _Nullable)          init;
+- (void)                            add: (T _Nonnull) object;
 
 @end
-
-#endif /* RedBlackTree_h */
