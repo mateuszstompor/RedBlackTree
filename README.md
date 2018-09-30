@@ -44,6 +44,9 @@ int main(int argc, const char * argv[]) {
 
         // count elements
         [tree count];
+
+        // check if it contains an object
+        [tree containsObject: [NSNumber numberWithInt:3]];
     }
     return 0;
 }
