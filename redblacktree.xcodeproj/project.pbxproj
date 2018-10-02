@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		5609F9D921605BF200EF9118 /* countTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9D821605BF200EF9118 /* countTests.m */; };
 		5609F9DB2160650200EF9118 /* containsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9DA2160650200EF9118 /* containsTests.m */; };
+		5609F9E82160D8DB00EF9118 /* deleteCaseFiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9E22160D8DB00EF9118 /* deleteCaseFiveTests.m */; };
+		5609F9E92160D8DB00EF9118 /* deleteCaseFourTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9E32160D8DB00EF9118 /* deleteCaseFourTests.m */; };
+		5609F9EA2160D8DB00EF9118 /* deleteCaseOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9E42160D8DB00EF9118 /* deleteCaseOneTests.m */; };
+		5609F9EB2160D8DB00EF9118 /* deleteCaseSixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9E52160D8DB00EF9118 /* deleteCaseSixTests.m */; };
+		5609F9EC2160D8DB00EF9118 /* deleteCaseThreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9E62160D8DB00EF9118 /* deleteCaseThreeTests.m */; };
+		5609F9ED2160D8DB00EF9118 /* deleteCaseTwoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9E72160D8DB00EF9118 /* deleteCaseTwoTests.m */; };
 		563FB8362160406000D61390 /* NodeColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 563FB8322160406000D61390 /* NodeColor.h */; };
 		563FB8372160406000D61390 /* RedBlackNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 563FB8332160406000D61390 /* RedBlackNode.h */; };
 		563FB8382160406000D61390 /* RedBlackNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 563FB8342160406000D61390 /* RedBlackNode.m */; };
@@ -18,6 +24,16 @@
 		56C22B331FF71EC80035E6A5 /* RedBlackTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C590441F63104300CB0A20 /* RedBlackTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61C590641F63111100CB0A20 /* insertTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C590471F63104E00CB0A20 /* insertTests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5609F9EE216109CC00EF9118 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 612B92C11F630E130017F2DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56C22B261FF71EB00035E6A5;
+			remoteInfo = redblacktree_macOS;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5609F9CE21605B6C00EF9118 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -30,6 +46,12 @@
 		5609F9D721605B6C00EF9118 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		5609F9D821605BF200EF9118 /* countTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = countTests.m; sourceTree = "<group>"; };
 		5609F9DA2160650200EF9118 /* containsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = containsTests.m; sourceTree = "<group>"; };
+		5609F9E22160D8DB00EF9118 /* deleteCaseFiveTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deleteCaseFiveTests.m; sourceTree = "<group>"; };
+		5609F9E32160D8DB00EF9118 /* deleteCaseFourTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deleteCaseFourTests.m; sourceTree = "<group>"; };
+		5609F9E42160D8DB00EF9118 /* deleteCaseOneTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deleteCaseOneTests.m; sourceTree = "<group>"; };
+		5609F9E52160D8DB00EF9118 /* deleteCaseSixTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deleteCaseSixTests.m; sourceTree = "<group>"; };
+		5609F9E62160D8DB00EF9118 /* deleteCaseThreeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deleteCaseThreeTests.m; sourceTree = "<group>"; };
+		5609F9E72160D8DB00EF9118 /* deleteCaseTwoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deleteCaseTwoTests.m; sourceTree = "<group>"; };
 		563FB8322160406000D61390 /* NodeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeColor.h; sourceTree = "<group>"; };
 		563FB8332160406000D61390 /* RedBlackNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedBlackNode.h; sourceTree = "<group>"; };
 		563FB8342160406000D61390 /* RedBlackNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedBlackNode.m; sourceTree = "<group>"; };
@@ -81,6 +103,19 @@
 				5609F9D521605B6C00EF9118 /* report.junit */,
 			);
 			path = test_output;
+			sourceTree = "<group>";
+		};
+		5609F9E12160D8DB00EF9118 /* delete */ = {
+			isa = PBXGroup;
+			children = (
+				5609F9E22160D8DB00EF9118 /* deleteCaseFiveTests.m */,
+				5609F9E32160D8DB00EF9118 /* deleteCaseFourTests.m */,
+				5609F9E42160D8DB00EF9118 /* deleteCaseOneTests.m */,
+				5609F9E52160D8DB00EF9118 /* deleteCaseSixTests.m */,
+				5609F9E62160D8DB00EF9118 /* deleteCaseThreeTests.m */,
+				5609F9E72160D8DB00EF9118 /* deleteCaseTwoTests.m */,
+			);
+			path = delete;
 			sourceTree = "<group>";
 		};
 		563FB8312160406000D61390 /* internal */ = {
@@ -147,6 +182,7 @@
 		61C590591F63110A00CB0A20 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				5609F9E12160D8DB00EF9118 /* delete */,
 				61C590471F63104E00CB0A20 /* insertTests.m */,
 				563FB83A216045A800D61390 /* initializerTests.m */,
 				5609F9D821605BF200EF9118 /* countTests.m */,
@@ -201,6 +237,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5609F9EF216109CC00EF9118 /* PBXTargetDependency */,
 			);
 			name = tests;
 			productName = treesTests;
@@ -268,14 +305,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5609F9E92160D8DB00EF9118 /* deleteCaseFourTests.m in Sources */,
+				5609F9EA2160D8DB00EF9118 /* deleteCaseOneTests.m in Sources */,
 				5609F9DB2160650200EF9118 /* containsTests.m in Sources */,
 				61C590641F63111100CB0A20 /* insertTests.m in Sources */,
 				563FB83B216045A800D61390 /* initializerTests.m in Sources */,
+				5609F9ED2160D8DB00EF9118 /* deleteCaseTwoTests.m in Sources */,
+				5609F9EB2160D8DB00EF9118 /* deleteCaseSixTests.m in Sources */,
 				5609F9D921605BF200EF9118 /* countTests.m in Sources */,
+				5609F9EC2160D8DB00EF9118 /* deleteCaseThreeTests.m in Sources */,
+				5609F9E82160D8DB00EF9118 /* deleteCaseFiveTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5609F9EF216109CC00EF9118 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56C22B261FF71EB00035E6A5 /* redblacktree_macOS */;
+			targetProxy = 5609F9EE216109CC00EF9118 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		56C22B2C1FF71EB00035E6A5 /* Debug */ = {

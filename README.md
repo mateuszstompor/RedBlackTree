@@ -14,6 +14,15 @@
 ## About
 macOS framework made in a way similar to all foundation containers. It is generic data structure, has interface similar to all other foundation containers and is tested.
 
+### Properties of Red-Black Tree
+<ul>
+    <li>Each node is either red or black</li>
+    <li>The root is black</li>
+    <li>All leaves and nil-children are considered to be black.</li>
+    <li>If a node is red, then both its children are black</li>
+    <li>Every path from a given node to any of its descendant nil nodes contains the same number of black nodes</li>
+</ul>
+
 ## Interface
 ```objective-c
 @interface RedBlackTree<T> : NSObject
@@ -21,7 +30,9 @@ macOS framework made in a way similar to all foundation containers. It is generi
 @property (nonatomic, readonly) NSUInteger count;
 
 - (instancetype)          init;
-- (void)                  addObject: (id) object;
+- (void)                  addObject: (T) object;
+- (BOOL)                  containsObject: (T) anObject;
+- (void)                  removeObject: (T) anObject;
 
 @end
 ```
@@ -44,6 +55,9 @@ int main(int argc, const char * argv[]) {
 
         // count elements
         [tree count];
+
+        // remove an element
+        [tree removeObject: [NSNumber numberWithInt:3]];
 
         // check if it contains an object
         [tree containsObject: [NSNumber numberWithInt:3]];

@@ -14,6 +14,7 @@
 
 @interface RedBlackTree ()
 @property (nonatomic) RedBlackNode<id> * root;
+@property (nonatomic) NSUInteger count;
 @end
 
 @implementation RedBlackTree
@@ -27,65 +28,57 @@
 }
 
 -(int) countBlackNodesIn: (RedBlackNode<id>* _Nullable) currentPoint {
-    if(currentPoint==nil){
+    if (!currentPoint) {
         return 1;
-    }
-    else{
-        int leftSubTree = [self countBlackNodesIn:currentPoint.left];
-        int rightSubTree = [self countBlackNodesIn:currentPoint.right];
-        assert(leftSubTree!=rightSubTree);
+    } else {
+        int leftSubTree = [self countBlackNodesIn: currentPoint.left];
+        int rightSubTree = [self countBlackNodesIn: currentPoint.right];
         return currentPoint.color == BLACK ? rightSubTree + 1 : rightSubTree;
     }
 }
 
 -(void) rotateLeft: (RedBlackNode<id>* _Nonnull) pivotNode{
-    if(pivotNode!=nil && pivotNode.right != nil){
+    if(pivotNode && pivotNode.right){
         RedBlackNode<id>* newPivot = pivotNode.right;
         newPivot.parent = pivotNode.parent;
-        if(pivotNode.parent!=nil){
+        if(pivotNode.parent){
             if([pivotNode isRight]){
-                pivotNode.parent.right=newPivot;
+                pivotNode.parent.right = newPivot;
+            } else {
+                pivotNode.parent.left = newPivot;
             }
-            else{
-                pivotNode.parent.left=newPivot;
-            }
+        } else{
+            root = newPivot;
         }
-        else{
-            self->root=newPivot;
-        }
-        if (newPivot.left != nil){
-            pivotNode.right=newPivot.left;
-            newPivot.left.parent=pivotNode;
-        }
-        else{
-            pivotNode.right=nil;
+        if (newPivot.left){
+            pivotNode.right = newPivot.left;
+            newPivot.left.parent = pivotNode;
+        } else {
+            pivotNode.right = nil;
         }
         newPivot.left = pivotNode;
-        pivotNode.parent=newPivot;
+        pivotNode.parent = newPivot;
     }
 }
 
 -(void) rotateRight: (RedBlackNode<id>* _Nonnull) pivotNode{
-    if(pivotNode!=nil && pivotNode.left != nil){
+    if(pivotNode && pivotNode.left){
         RedBlackNode<id>* newPivot = pivotNode.left;
         newPivot.parent = pivotNode.parent;
-        if(pivotNode.parent!=nil){
-            if([pivotNode isLeft]){
-                pivotNode.parent.left=newPivot;
+        if(pivotNode.parent) {
+            if ([pivotNode isLeft]) {
+                pivotNode.parent.left = newPivot;
+            } else {
+                pivotNode.parent.right = newPivot;
             }
-            else{
-                pivotNode.parent.right=newPivot;
-            }
+        } else {
+            root = newPivot;
         }
-        else{
-            self->root=newPivot;
-        }
-        if (newPivot.right != nil){
-            pivotNode.left=newPivot.right;
-            newPivot.right.parent=pivotNode;
-        }
-        else{
-            pivotNode.left=nil;
+        if (newPivot.right){
+            pivotNode.left = newPivot.right;
+            newPivot.right.parent = pivotNode;
+        } else {
+            pivotNode.left = nil;
         }
         newPivot.right = pivotNode;
         pivotNode.parent=newPivot;
@@ -110,62 +103,49 @@
         return currentNode;
     }
 }
+
 -(void) createLinkFrom: (RedBlackNode<id>*) child to: (RedBlackNode<id>*) parent{
-    if(parent == nil){
+    if (!parent) {
         self->root=child;
     }else{
-        if([child.data isGreaterThan:parent.data]){
+        if ([child.data isGreaterThan:parent.data]){
             parent.right=child;
-        }
-        else{
+        } else {
             parent.left=child;
         }
         [child setParent:parent];
     }
 }
+
 -(RedBlackNode<id>* _Nullable) getSiblingNode: (RedBlackNode<id>* _Nullable) node{
-    if(node!=nil){
-        if([node isRight]){
+    if(node) {
+        if ([node isRight]) {
             return node.parent.left;
-        }
-        else if([node isLeft]){
+        } else if ([node isLeft]) {
             return node.parent.right;
         }
     }
     return nil;
 }
 
--(unsigned int)countAllNodes {
-    return [self countNodesFrom:self->root];
-}
--(unsigned int)countNodesFrom: (RedBlackNode<id>* _Nullable) node {
-    if (node) {
-        return [self countNodesFrom:node.left] + [self countNodesFrom:node.right] + 1;
-    } else {
-        return 0;
-    }
-}
-
 -(RedBlackNode<id>* _Nullable)colorUntilRBTPropertiesArePreserved: (RedBlackNode<id>* _Nullable) initialNode{
-    if(initialNode != nil){
+    if (initialNode) {
         RedBlackNode<id>* uncle = [self getSiblingNode:initialNode.parent];
         RedBlackNode<id>* currentNode=initialNode.parent;
-        while([self requiresColoring:initialNode]){
+        while([self requiresColoring: initialNode]) {
             [currentNode swapColor];
             [uncle swapColor];
             [currentNode.parent swapColor];
-            initialNode=uncle.parent;
-            if(initialNode!=nil){
-                currentNode=initialNode.parent;
+            initialNode = uncle.parent;
+            if (initialNode) {
+                currentNode = initialNode.parent;
+            } else {
+                currentNode = nil;
             }
-            else{
-                currentNode=nil;
-            }
-            uncle=[self getSiblingNode:currentNode];
+            uncle = [self getSiblingNode:currentNode];
         }
         return initialNode;
-    }
-    else{
+    } else {
         return nil;
     }
 }
@@ -186,25 +166,17 @@
     }
 }
 -(bool)requiresColoring: (RedBlackNode<id>*) currentNode{
-    if(currentNode != nil && currentNode.color==RED && currentNode.parent!=nil && currentNode.parent.color==RED){
+    if(currentNode && currentNode.color == RED && currentNode.parent && currentNode.parent.color == RED){
         RedBlackNode<id>* uncle = [self getSiblingNode:currentNode.parent];
-        if(uncle!=nil && uncle.color==RED){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-    else{
+        return uncle != nil && uncle.color == RED;
+    } else {
         return false;
     }
 }
 -(bool)requiresRotation: (RedBlackNode<id>*) currentNode{
     if(currentNode != nil && currentNode.color==RED && currentNode.parent != nil && currentNode.parent.color==RED){
         RedBlackNode<id>* uncle = [self getSiblingNode:currentNode.parent];
-        if(uncle == nil || uncle.color==BLACK){
-            return true;
-        }
+        return !uncle || uncle.color == BLACK;
     }
     return false;
 }
@@ -249,43 +221,27 @@
     return [self searchFor:value from:self->root];
 }
 -(RedBlackNode<id>* _Nullable) searchFor: (id _Nonnull) value from: (RedBlackNode<id>* _Nonnull) initialNode{
-    while(initialNode!=nil){
+    while(initialNode) {
         if([value isEqual:[initialNode data]]){
             return initialNode;
-        }
-        else if([value isGreaterThan: initialNode.data]){
+        } else if([value isGreaterThan: initialNode.data]){
             initialNode=initialNode.right;
-        }
-        else{
+        } else {
             initialNode=initialNode.left;
         }
     }
     return nil;
 }
 -(int) amountOfChildren: (RedBlackNode<id>* _Nonnull) node {
-    if(node.left != nil && node.right != nil){
+    if (node.left && node.right) {
         return 2;
-    }else if(node.left != nil || node.right != nil){
+    } else if (node.left || node.right) {
         return 1;
-    }
-    else{
+    } else {
         return 0;
     }
 }
--(bool) hasleft: (RedBlackNode<id>* _Nonnull) node{
-    if(node.left!=nil){
-        return true;
-    }else{
-        return false;
-    }
-}
--(bool) hasright: (RedBlackNode<id>* _Nonnull) node{
-    if(node.right!=nil){
-        return true;
-    }else{
-        return false;
-    }
-}
+
 -(RedBlackNode<id>* _Nullable) binaryDelete: (id _Nonnull) value OptionalPointerToNode: (RedBlackNode<id>* _Nullable) node{
     if((node == nil && ((node=[self searchFor:value]) == nil))||([[node data] isEqual:value]==false)){
         [NSException raise:@"There is no such value" format:@"Value was %@", value];
@@ -293,10 +249,9 @@
     int amountOfChildren = [self amountOfChildren:node];
     RedBlackNode <id>* nodeToConnectWithParent=nil;
     if(amountOfChildren==1){
-        if([self hasleft:node]){
+        if([node left]){
             nodeToConnectWithParent=node.left;
-        }
-        else{
+        } else {
             nodeToConnectWithParent=node.right;
         }
     }
@@ -312,110 +267,105 @@
     if([node isRight]){
         node.parent.right=nodeToConnectWithParent;
         
-    }
-    else if([node isLeft]){
-        node.parent.left=nodeToConnectWithParent;
+    } else if([node isLeft]){
+        node.parent.left = nodeToConnectWithParent;
     }
     if(nodeToConnectWithParent!=nil){
-        nodeToConnectWithParent.parent=node.parent;
+        nodeToConnectWithParent.parent = node.parent;
     }
-    if(node==self->root){
-        self->root=nodeToConnectWithParent;
+    if(node == root){
+        root = nodeToConnectWithParent;
     }
     return nodeToConnectWithParent.parent;
 }
 -(bool) hasRedChild: (RedBlackNode<id>* _Nonnull) node{
     return (node.left != nil && node.left.color==RED)||(node.right != nil && node.right.color==RED) ? true : false;
 }
--(void) deleteValue: (id _Nonnull) value{
-    [self deleteValue:value searchFrom:self->root];
+
+- (void) removeObject: (id) anObject {
+    if([self deleteValue: anObject searchFrom: root]) {
+        --count;
+    }
 }
--(void) deleteValue: (id _Nonnull) value searchFrom: (RedBlackNode<id>*) initialNode{
+
+-(BOOL) deleteValue: (id _Nonnull) value searchFrom: (RedBlackNode<id>*) initialNode {
     RedBlackNode<id>* nodeToDelete = [self searchFor:value from:initialNode];
-    if(nodeToDelete!=nil && [value isEqual: [nodeToDelete data]]){
+    if (nodeToDelete && [value isEqual: [nodeToDelete data]]){
         int amountOfKids = [self amountOfChildren:nodeToDelete];
-        if(amountOfKids==2){
+        if(amountOfKids == 2) {
             RedBlackNode<id>* minimalNode = [self getMinNodeFromSubtree:nodeToDelete.right];
             [nodeToDelete setData:[minimalNode data]];
             [self deleteValue:[minimalNode data] searchFrom:minimalNode];
-        }
-        else{
-            if(amountOfKids<2 && nodeToDelete.color==RED){
+        } else {
+            if(amountOfKids < 2 && nodeToDelete.color == RED) {
                 [self binaryDelete:value OptionalPointerToNode:nodeToDelete];
-                return;
-            }
-            else if(nodeToDelete.color==BLACK && amountOfKids==1){
-                if(([self hasleft:nodeToDelete] && nodeToDelete.left.color==RED)
-                   ||([self hasright:nodeToDelete] && nodeToDelete.right.color==RED)){
-                    if([self hasright:nodeToDelete]){
+            } else if(nodeToDelete.color == BLACK && amountOfKids == 1){
+                if(([nodeToDelete left] && nodeToDelete.left.color == RED)
+                   ||([nodeToDelete right] && nodeToDelete.right.color == RED)) {
+                    if([nodeToDelete right]) {
                         [nodeToDelete.right swapColor];
-                    }
-                    else{
+                    } else{
                         [nodeToDelete.left swapColor];
                     }
                     [self binaryDelete:value OptionalPointerToNode:nodeToDelete];
-                    return;
                 }
-            }
-            else {
+            } else {
                 RedBlackNode<id>* parent = nodeToDelete.parent;
                 [self binaryDelete:value OptionalPointerToNode:nodeToDelete];
                 [self deleteCaseOne: parent];
             }
         }
     }
+    return nodeToDelete != nil;
 }
 
--(void)deleteCaseOne: (RedBlackNode<id>*) parentNode{
+-(void) deleteCaseOne: (RedBlackNode<id>*) parentNode {
     if(parentNode==nil){
         if(root!=nil){
-            int leftheight = [self countBlackNodesIn:self->root.left];
-            int rightheight = [self countBlackNodesIn:self->root.right];
-            if(leftheight==rightheight){
-                (self->root).color=BLACK;
+            int leftheight = [self countBlackNodesIn: root.left];
+            int rightheight = [self countBlackNodesIn: root.right];
+            if (leftheight == rightheight) {
+                root.color=BLACK;
                 return;
             }
-        }else{
+        } else {
             return;
         }
-    }else{
+    } else {
         [self deleteCaseTwo:parentNode];
         return;
     }
 }
 -(bool) isBlack: (RedBlackNode<id>* _Nullable) node{
-    return (node==nil || node.color==BLACK) ? true : false;
+    return !node || node.color == BLACK;
 }
 -(bool) bothKidsAreBlack: (RedBlackNode<id>*_Nonnull) node{
-    return [self isBlack:node.left] && [self isBlack:node.right] ? true : false;
+    return [self isBlack:node.left] && [self isBlack:node.right];
 }
 -(RedBlackNode<id>*) getRedKid: (RedBlackNode<id>* _Nonnull) node{
-    if(node.left!=nil&&node.left.color==RED){
+    if (node.left && node.left.color == RED){
         return node.left;
-    }
-    else if(node.right!=nil && node.right.color==RED){
+    } else if (node.right && node.right.color == RED) {
         return node.right;
-    }
-    else{
+    } else {
         return nil;
     }
 }
 -(void)deleteCaseTwo:(RedBlackNode<id>*) parentNode{
-    if([self hasRedChild:parentNode] && [self bothKidsAreBlack:[self getRedKid:parentNode]]){
+    if([self hasRedChild:parentNode] && [self bothKidsAreBlack:[self getRedKid:parentNode]]) {
         int leftheight = [self countBlackNodesIn:parentNode.left];
         int rightheight = [self countBlackNodesIn:parentNode.right];
-        if(rightheight>leftheight){
+        if(rightheight>leftheight) {
             [self rotateLeft:parentNode];
             [self changeColorAfterLeftRotation:parentNode.parent];
-        }
-        else{
+        } else {
             [self rotateRight:parentNode];
             [self changeColorAfterRightRotation:parentNode.parent];
         }
     }
     [self deleteCaseThree:parentNode];
-    return;
 }
+
 -(void)deleteCaseThree: (RedBlackNode<id>*) parentNode{
     if(parentNode.color==BLACK){
         int leftheight = [self countBlackNodesIn:parentNode.left];
@@ -432,7 +382,6 @@
         }
     }
     [self deleteCaseFour:parentNode];
-    return;
 }
 
 -(void) deleteCaseFour: (RedBlackNode<id>*) parentNode{
@@ -454,8 +403,8 @@
         }
     }
     [self deleteCaseFive:parentNode];
-    return;
 }
+
 -(bool) hasBlackChild: (RedBlackNode<id>*) parentNode{
     bool left = parentNode.left==nil || parentNode.left.color==BLACK;
     bool right = parentNode.right==nil || parentNode.right.color==BLACK;
@@ -474,16 +423,15 @@
                 [self rotateRight:nodeToExaminate];
                 [self changeColorAfterRightRotation:nodeToExaminate.parent];
             }
-            else if(leftheight>rightheight && nodeToExaminate.right!=nil && nodeToExaminate.right.color==RED){
+            else if(leftheight>rightheight && nodeToExaminate.right && nodeToExaminate.right.color==RED){
                 [self rotateLeft:nodeToExaminate];
                 [self changeColorAfterLeftRotation:nodeToExaminate.parent];
             }
         }
     }
     [self deleteCaseSix:parentNode];
-    return;
-    
 }
+
 -(void) deleteCaseSix: (RedBlackNode<id>*) parentNode{
     int leftheight = [self countBlackNodesIn:parentNode.left];
     int rightheight = [self countBlackNodesIn:parentNode.right];
@@ -495,15 +443,14 @@
         [self rotateLeft:parentNode];
         [self changeColorAfterLeftRotation:parentNode.parent];
         return;
-    }
-    else if(leftheight>rightheight && nodeToExaminate.left==RED){
+    } else if(leftheight>rightheight && nodeToExaminate.left==RED){
         [self rotateRight:parentNode];
         [self changeColorAfterRightRotation:parentNode.parent];
         return;
     }
     [self deleteCaseOne:parentNode];
-    return;
 }
+
 -(void) addObject: (id _Nonnull) value {
     RedBlackNode<id>* childToInsert = [[RedBlackNode alloc] initWithParent:nil andValue:value];
     RedBlackNode<id>* parentNode = [self findAppropriatePlaceForNewValue:value];
@@ -531,16 +478,6 @@
     }
     ++count;
     [self->root setColor:BLACK];
-}
--(void) inOrderCallingBlock: ( void (^ _Nonnull)(id _Nonnull)) block {
-    [self inOrderCallingBlock:block from: root];
-}
--(void) inOrderCallingBlock: ( void (^ _Nonnull)(id _Nonnull)) block from: (RedBlackNode<id>*) node {
-    if(node!=nil){
-        [self inOrderCallingBlock:block from:node.left];
-        block([node data]);
-        [self inOrderCallingBlock:block from:node.right];
-    }
 }
 
 @end
