@@ -25,6 +25,16 @@
 		61C590641F63111100CB0A20 /* insertTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C590471F63104E00CB0A20 /* insertTests.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5609F9EE216109CC00EF9118 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 612B92C11F630E130017F2DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56C22B261FF71EB00035E6A5;
+			remoteInfo = redblacktree_macOS;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5609F9CE21605B6C00EF9118 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5609F9D021605B6C00EF9118 /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
@@ -227,6 +237,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5609F9EF216109CC00EF9118 /* PBXTargetDependency */,
 			);
 			name = tests;
 			productName = treesTests;
@@ -308,6 +319,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5609F9EF216109CC00EF9118 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56C22B261FF71EB00035E6A5 /* redblacktree_macOS */;
+			targetProxy = 5609F9EE216109CC00EF9118 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		56C22B2C1FF71EB00035E6A5 /* Debug */ = {

@@ -16,13 +16,18 @@
 @synthesize parent      = parent;
 
 -(instancetype _Nonnull)initWithParent: (RedBlackNode<id> * _Nullable) parent andValue: (id _Nonnull) value {
+    self = [self initWithParent: parent andValue: value color: RED];
+    return self;
+}
+
+-(instancetype _Nonnull)initWithParent: (RedBlackNode<id> * _Nullable) parent andValue: (id _Nonnull) value color: (NodeColor) color {
     self = [self init];
     if(self) {
-        data    = value;
-        color   = RED;
-        left    = nil;
-        parent  = nil;
-        right   = nil;
+        self.data    = value;
+        self.color   = color;
+        self.left    = nil;
+        self.parent  = parent;
+        self.right   = nil;
     }
     return self;
 }

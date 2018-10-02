@@ -14,6 +14,7 @@
 
 @interface RedBlackTree ()
 @property (nonatomic) RedBlackNode<id> * root;
+@property (nonatomic) NSUInteger count;
 @end
 
 @implementation RedBlackTree
@@ -27,13 +28,11 @@
 }
 
 -(int) countBlackNodesIn: (RedBlackNode<id>* _Nullable) currentPoint {
-    if(!currentPoint) {
+    if (!currentPoint) {
         return 1;
-    }
-    else {
+    } else {
         int leftSubTree = [self countBlackNodesIn: currentPoint.left];
         int rightSubTree = [self countBlackNodesIn: currentPoint.right];
-        assert(leftSubTree!=rightSubTree);
         return currentPoint.color == BLACK ? rightSubTree + 1 : rightSubTree;
     }
 }
@@ -295,34 +294,30 @@
     [self deleteValue: anObject searchFrom: root];
 }
 
--(void) deleteValue: (id _Nonnull) value searchFrom: (RedBlackNode<id>*) initialNode{
+-(void) deleteValue: (id _Nonnull) value searchFrom: (RedBlackNode<id>*) initialNode {
     RedBlackNode<id>* nodeToDelete = [self searchFor:value from:initialNode];
-    if(nodeToDelete!=nil && [value isEqual: [nodeToDelete data]]){
+    if (nodeToDelete && [value isEqual: [nodeToDelete data]]){
         int amountOfKids = [self amountOfChildren:nodeToDelete];
         if(amountOfKids==2){
             RedBlackNode<id>* minimalNode = [self getMinNodeFromSubtree:nodeToDelete.right];
             [nodeToDelete setData:[minimalNode data]];
             [self deleteValue:[minimalNode data] searchFrom:minimalNode];
-        }
-        else{
+        } else {
             if(amountOfKids < 2 && nodeToDelete.color == RED){
                 [self binaryDelete:value OptionalPointerToNode:nodeToDelete];
                 return;
-            }
-            else if(nodeToDelete.color==BLACK && amountOfKids==1){
-                if(([nodeToDelete left] && nodeToDelete.left.color==RED)
-                   ||([nodeToDelete right] && nodeToDelete.right.color==RED)){
+            } else if(nodeToDelete.color == BLACK && amountOfKids == 1){
+                if(([nodeToDelete left] && nodeToDelete.left.color == RED)
+                   ||([nodeToDelete right] && nodeToDelete.right.color == RED)){
                     if([nodeToDelete right]) {
                         [nodeToDelete.right swapColor];
-                    }
-                    else{
+                    } else{
                         [nodeToDelete.left swapColor];
                     }
                     [self binaryDelete:value OptionalPointerToNode:nodeToDelete];
                     return;
                 }
-            }
-            else {
+            } else {
                 RedBlackNode<id>* parent = nodeToDelete.parent;
                 [self binaryDelete:value OptionalPointerToNode:nodeToDelete];
                 [self deleteCaseOne: parent];
@@ -352,7 +347,7 @@
     return !node || node.color == BLACK;
 }
 -(bool) bothKidsAreBlack: (RedBlackNode<id>*_Nonnull) node{
-    return [self isBlack:node.left] && [self isBlack:node.right] ? true : false;
+    return [self isBlack:node.left] && [self isBlack:node.right];
 }
 -(RedBlackNode<id>*) getRedKid: (RedBlackNode<id>* _Nonnull) node{
     if (node.left && node.left.color == RED){
@@ -494,16 +489,6 @@
     }
     ++count;
     [self->root setColor:BLACK];
-}
--(void) inOrderCallingBlock: ( void (^ _Nonnull)(id _Nonnull)) block {
-    [self inOrderCallingBlock:block from: root];
-}
--(void) inOrderCallingBlock: ( void (^ _Nonnull)(id _Nonnull)) block from: (RedBlackNode<id>*) node {
-    if(node!=nil){
-        [self inOrderCallingBlock:block from:node.left];
-        block([node data]);
-        [self inOrderCallingBlock:block from:node.right];
-    }
 }
 
 @end
