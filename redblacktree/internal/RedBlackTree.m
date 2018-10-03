@@ -198,6 +198,14 @@
     }
 }
 
+- (id) objectForKey: (T _Nonnull) anObject {
+    RedBlackNode<id>* node = [self searchFor:value from:initialNode];
+    if (node) {
+        return [node data];
+    }
+    return nil;
+}
+
 -(RedBlackNode<id>* _Nullable) getMinNodeFromSubtree: (RedBlackNode<id>* _Nullable) node{
     if(node!=nil){
         RedBlackNode<id>* currentMin = node;
