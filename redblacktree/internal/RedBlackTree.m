@@ -198,8 +198,8 @@
     }
 }
 
-- (id) objectForKey: (T _Nonnull) anObject {
-    RedBlackNode<id>* node = [self searchFor:value from:initialNode];
+- (id) objectForKey: (id) anObject {
+    RedBlackNode<id>* node = [self searchFor:anObject from: root];
     if (node) {
         return [node data];
     }
