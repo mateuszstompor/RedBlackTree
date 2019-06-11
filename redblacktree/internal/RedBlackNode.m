@@ -54,6 +54,16 @@
     }
 }
 
+- (int) childrenAmount {
+    if (self.left && self.right) {
+        return 2;
+    } else if (self.left || self.right) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
 - (BOOL) bothKidsAreBlack {
     return !self.left || self.left.color == BLACK || !self.right || self.right.color == BLACK;
 }

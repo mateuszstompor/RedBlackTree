@@ -28,4 +28,6 @@
 - (BOOL)                        isRight;
 - (BOOL)                        isLeft;
 - (BOOL)                        bothKidsAreBlack;
+- (int)                         childrenAmount;
+
 @end

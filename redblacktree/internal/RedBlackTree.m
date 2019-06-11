@@ -152,24 +152,6 @@
     }
 }
 
--(void) rotateLeftAndValidateConnection: (RedBlackNode<id>*) pivot shouldChangeColors: (bool) changeColors {
-    if(pivot!=nil){
-        [self rotateLeft:pivot];
-        if(changeColors){
-            [self changeColorAfterRightRotation:pivot.parent];
-        }
-    }
-}
-
--(void) rotateRightAndValidateConnection: (RedBlackNode<id>*) pivot shouldChangeColors: (bool) changeColors {
-    if(pivot!=nil){
-        [self rotateRight:pivot];
-        if(changeColors){
-            [self changeColorAfterRightRotation:pivot.parent];
-        }
-    }
-}
-
 -(bool)requiresColoring: (RedBlackNode<id>*) currentNode {
     if(currentNode && currentNode.color == RED && currentNode.parent && currentNode.parent.color == RED){
         RedBlackNode<id>* uncle = [self getSiblingNode:currentNode.parent];
@@ -248,30 +230,21 @@
     }
     return nil;
 }
--(int) amountOfChildren: (RedBlackNode<id>* _Nonnull) node {
-    if (node.left && node.right) {
-        return 2;
-    } else if (node.left || node.right) {
-        return 1;
-    } else {
-        return 0;
-    }
-}
 
 -(RedBlackNode<id>* _Nullable) binaryDelete: (id _Nonnull) value OptionalPointerToNode: (RedBlackNode<id>* _Nullable) node {
     if((node == nil && ((node=[self searchFor:value]) == nil))||([[node data] isEqual:value]==false)){
         [NSException raise:@"There is no such value" format:@"Value was %@", value];
     }
-    int amountOfChildren = [self amountOfChildren:node];
-    RedBlackNode <id>* nodeToConnectWithParent=nil;
-    if(amountOfChildren==1){
+    int amountOfChildren = [node childrenAmount];
+    RedBlackNode <id>* nodeToConnectWithParent = nil;
+    if (amountOfChildren == 1) {
         if([node left]){
             nodeToConnectWithParent=node.left;
         } else {
             nodeToConnectWithParent=node.right;
         }
     }
-    else if(amountOfChildren==2){
+    else if (amountOfChildren == 2) {
         RedBlackNode <id>* minimum = [self getMinNodeFromSubtree:node.right];
         [self binaryDelete:[minimum data] OptionalPointerToNode:minimum];
         nodeToConnectWithParent=minimum;
@@ -304,7 +277,7 @@
 -(BOOL) deleteValue: (id _Nonnull) value searchFrom: (RedBlackNode<id>*) initialNode {
     RedBlackNode<id>* nodeToDelete = [self searchFor:value from:initialNode];
     if (nodeToDelete && [value isEqual: [nodeToDelete data]]){
-        int amountOfKids = [self amountOfChildren:nodeToDelete];
+        int amountOfKids = [nodeToDelete childrenAmount];
         if(amountOfKids == 2) {
             RedBlackNode<id>* minimalNode = [self getMinNodeFromSubtree:nodeToDelete.right];
             [nodeToDelete setData:[minimalNode data]];
@@ -395,7 +368,7 @@
         if([self isBlack:nodeToExaminate]&& nodeToExaminate!=nil && [nodeToExaminate bothKidsAreBlack]){
             [parentNode swapColor];
             [nodeToExaminate swapColor];
-            if([self amountOfChildren:parentNode]==2){
+            if([parentNode childrenAmount] == 2){
                 RedBlackNode<id>* sibling = [self getSiblingNode:nodeToExaminate];
                 [sibling setColor:BLACK];
             }
@@ -453,21 +426,21 @@
     RedBlackNode<id>* currentNode = [self colorUntilRBTPropertiesArePreserved:childToInsert];
     if([self requiresRotation:currentNode]){
         if([currentNode isLeft] && [currentNode.parent isLeft]){
-            [self rotateRightAndValidateConnection:currentNode.parent.parent shouldChangeColors:false];
+            [self rotateRight:currentNode.parent.parent];
             [self changeColorAfterRightRotation:currentNode.parent];
         }
         else if([currentNode isLeft] && [currentNode.parent isRight]){
-            [self rotateRightAndValidateConnection:currentNode.parent shouldChangeColors:false];
-            [self rotateLeftAndValidateConnection:currentNode.parent shouldChangeColors:false];
+            [self rotateRight:currentNode.parent];
+            [self rotateLeft:currentNode.parent];
             [self changeColorAfterLeftRotation:currentNode];
         }
         else if([currentNode isRight] && [currentNode.parent isLeft]){
-            [self rotateLeftAndValidateConnection:currentNode.parent shouldChangeColors:false];
-            [self rotateRightAndValidateConnection:currentNode.parent shouldChangeColors:false];
+            [self rotateLeft:currentNode.parent];
+            [self rotateRight:currentNode.parent];
             [self changeColorAfterRightRotation:currentNode];
         }
         else{
-            [self rotateLeftAndValidateConnection:currentNode.parent.parent shouldChangeColors:false];
+            [self rotateLeft:currentNode.parent.parent];
             [self changeColorAfterLeftRotation:currentNode.parent];
         }
     }
