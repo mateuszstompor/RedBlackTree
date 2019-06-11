@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FC82A8922AF91B100B6C0FA /* getBlackKidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC82A8822AF91B100B6C0FA /* getBlackKidTests.m */; };
 		5609F9D921605BF200EF9118 /* countTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9D821605BF200EF9118 /* countTests.m */; };
 		5609F9DB2160650200EF9118 /* containTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9DA2160650200EF9118 /* containTests.m */; };
 		5609F9E92160D8DB00EF9118 /* deleteCaseFourTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9E32160D8DB00EF9118 /* deleteCaseFourTests.m */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FC82A8822AF91B100B6C0FA /* getBlackKidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = getBlackKidTests.m; sourceTree = "<group>"; };
 		5609F9CE21605B6C00EF9118 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5609F9D021605B6C00EF9118 /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
 		5609F9D121605B6C00EF9118 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		2FC82A8622AF90C300B6C0FA /* node */ = {
 			isa = PBXGroup;
 			children = (
+				2FC82A8822AF91B100B6C0FA /* getBlackKidTests.m */,
 			);
 			path = node;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				5609F9E92160D8DB00EF9118 /* deleteCaseFourTests.m in Sources */,
 				5609F9EA2160D8DB00EF9118 /* deleteCaseOneTests.m in Sources */,
 				5609F9DB2160650200EF9118 /* containTests.m in Sources */,
+				2FC82A8922AF91B100B6C0FA /* getBlackKidTests.m in Sources */,
 				61C590641F63111100CB0A20 /* insertTests.m in Sources */,
 				563FB83B216045A800D61390 /* initializerTests.m in Sources */,
 				5609F9D921605BF200EF9118 /* countTests.m in Sources */,
