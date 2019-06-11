@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5609F9D921605BF200EF9118 /* countTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9D821605BF200EF9118 /* countTests.m */; };
-		5609F9DB2160650200EF9118 /* containsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9DA2160650200EF9118 /* containsTests.m */; };
-		5609F9E82160D8DB00EF9118 /* deleteCaseFiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9E22160D8DB00EF9118 /* deleteCaseFiveTests.m */; };
+		5609F9DB2160650200EF9118 /* containTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9DA2160650200EF9118 /* containTests.m */; };
 		5609F9E92160D8DB00EF9118 /* deleteCaseFourTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9E32160D8DB00EF9118 /* deleteCaseFourTests.m */; };
 		5609F9EA2160D8DB00EF9118 /* deleteCaseOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9E42160D8DB00EF9118 /* deleteCaseOneTests.m */; };
 		5609F9EB2160D8DB00EF9118 /* deleteCaseSixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9E52160D8DB00EF9118 /* deleteCaseSixTests.m */; };
 		5609F9EC2160D8DB00EF9118 /* deleteCaseThreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9E62160D8DB00EF9118 /* deleteCaseThreeTests.m */; };
-		5609F9ED2160D8DB00EF9118 /* deleteCaseTwoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9E72160D8DB00EF9118 /* deleteCaseTwoTests.m */; };
 		563FB8362160406000D61390 /* NodeColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 563FB8322160406000D61390 /* NodeColor.h */; };
 		563FB8372160406000D61390 /* RedBlackNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 563FB8332160406000D61390 /* RedBlackNode.h */; };
 		563FB8382160406000D61390 /* RedBlackNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 563FB8342160406000D61390 /* RedBlackNode.m */; };
@@ -45,13 +43,11 @@
 		5609F9D621605B6C00EF9118 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		5609F9D721605B6C00EF9118 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		5609F9D821605BF200EF9118 /* countTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = countTests.m; sourceTree = "<group>"; };
-		5609F9DA2160650200EF9118 /* containsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = containsTests.m; sourceTree = "<group>"; };
-		5609F9E22160D8DB00EF9118 /* deleteCaseFiveTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deleteCaseFiveTests.m; sourceTree = "<group>"; };
+		5609F9DA2160650200EF9118 /* containTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = containTests.m; sourceTree = "<group>"; };
 		5609F9E32160D8DB00EF9118 /* deleteCaseFourTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deleteCaseFourTests.m; sourceTree = "<group>"; };
 		5609F9E42160D8DB00EF9118 /* deleteCaseOneTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deleteCaseOneTests.m; sourceTree = "<group>"; };
 		5609F9E52160D8DB00EF9118 /* deleteCaseSixTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deleteCaseSixTests.m; sourceTree = "<group>"; };
 		5609F9E62160D8DB00EF9118 /* deleteCaseThreeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deleteCaseThreeTests.m; sourceTree = "<group>"; };
-		5609F9E72160D8DB00EF9118 /* deleteCaseTwoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deleteCaseTwoTests.m; sourceTree = "<group>"; };
 		563FB8322160406000D61390 /* NodeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeColor.h; sourceTree = "<group>"; };
 		563FB8332160406000D61390 /* RedBlackNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedBlackNode.h; sourceTree = "<group>"; };
 		563FB8342160406000D61390 /* RedBlackNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedBlackNode.m; sourceTree = "<group>"; };
@@ -108,12 +104,10 @@
 		5609F9E12160D8DB00EF9118 /* delete */ = {
 			isa = PBXGroup;
 			children = (
-				5609F9E22160D8DB00EF9118 /* deleteCaseFiveTests.m */,
 				5609F9E32160D8DB00EF9118 /* deleteCaseFourTests.m */,
 				5609F9E42160D8DB00EF9118 /* deleteCaseOneTests.m */,
 				5609F9E52160D8DB00EF9118 /* deleteCaseSixTests.m */,
 				5609F9E62160D8DB00EF9118 /* deleteCaseThreeTests.m */,
-				5609F9E72160D8DB00EF9118 /* deleteCaseTwoTests.m */,
 			);
 			path = delete;
 			sourceTree = "<group>";
@@ -186,7 +180,7 @@
 				61C590471F63104E00CB0A20 /* insertTests.m */,
 				563FB83A216045A800D61390 /* initializerTests.m */,
 				5609F9D821605BF200EF9118 /* countTests.m */,
-				5609F9DA2160650200EF9118 /* containsTests.m */,
+				5609F9DA2160650200EF9118 /* containTests.m */,
 				61C5905C1F63110A00CB0A20 /* Info.plist */,
 			);
 			path = tests;
@@ -250,7 +244,7 @@
 		612B92C11F630E130017F2DE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Mateusz Stompór";
 				TargetAttributes = {
 					56C22B261FF71EB00035E6A5 = {
@@ -307,14 +301,12 @@
 			files = (
 				5609F9E92160D8DB00EF9118 /* deleteCaseFourTests.m in Sources */,
 				5609F9EA2160D8DB00EF9118 /* deleteCaseOneTests.m in Sources */,
-				5609F9DB2160650200EF9118 /* containsTests.m in Sources */,
+				5609F9DB2160650200EF9118 /* containTests.m in Sources */,
 				61C590641F63111100CB0A20 /* insertTests.m in Sources */,
 				563FB83B216045A800D61390 /* initializerTests.m in Sources */,
-				5609F9ED2160D8DB00EF9118 /* deleteCaseTwoTests.m in Sources */,
 				5609F9EB2160D8DB00EF9118 /* deleteCaseSixTests.m in Sources */,
 				5609F9D921605BF200EF9118 /* countTests.m in Sources */,
 				5609F9EC2160D8DB00EF9118 /* deleteCaseThreeTests.m in Sources */,
-				5609F9E82160D8DB00EF9118 /* deleteCaseFiveTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +392,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -407,6 +400,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -455,6 +449,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -462,6 +457,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

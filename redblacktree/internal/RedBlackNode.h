@@ -20,8 +20,9 @@
 @property (nonatomic)                   NodeColor               color;
 @property (nonatomic, nonnull, strong)  T                       data;
 
-- (instancetype _Nonnull)   initWithParent: (RedBlackNode<id> * _Nullable) parent andValue: (id _Nonnull) value color: (NodeColor) color;
+- (instancetype _Nonnull)   initWithParent: (RedBlackNode<T> * _Nullable) parent andValue: (T _Nonnull) value color: (NodeColor) color;
 - (instancetype _Nonnull)   initWithParent: (RedBlackNode <T> * _Nullable) parent andValue: (T _Nonnull) value;
+- (bool)                    hasBlackChild;
 - (void)                    swapColor;
 - (BOOL)                    isRight;
 - (BOOL)                    isLeft;

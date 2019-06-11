@@ -44,4 +44,10 @@
     return parent && parent.left == self;
 }
 
+-(bool) hasBlackChild {
+    bool leftExists = self.left == nil || self.left.color == BLACK;
+    bool rightExists = self.right == nil || self.right.color == BLACK;
+    return leftExists || rightExists;
+}
+
 @end

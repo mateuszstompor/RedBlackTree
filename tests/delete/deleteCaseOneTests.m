@@ -37,7 +37,7 @@
     [tree addObject:[NSNumber numberWithInt:2]];
     
     XCTAssertNoThrow([tree removeObject:[NSNumber numberWithInt:2]]);
-    XCTAssertTrue(![tree containsObject:[NSNumber numberWithInt:2]]);
+    XCTAssertTrue(![tree containObject:[NSNumber numberWithInt:2]]);
 }
 
 -(void) testDeleteColoringOnRootWithLeftChildTree {

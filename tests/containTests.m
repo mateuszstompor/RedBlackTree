@@ -1,5 +1,5 @@
 //
-//  containsTests.m
+//  containTests.m
 //  tests
 //
 //  Created by Mateusz Stompór on 30/09/2018.
@@ -23,12 +23,12 @@
 }
 
 - (void)testContainsOnEmptyTree {
-    XCTAssertTrue(![tree containsObject:[NSNumber numberWithInt:2]]);
+    XCTAssertTrue(![tree containObject:[NSNumber numberWithInt:2]]);
 }
 
 - (void)testContainsOnOneElementTree {
     [tree addObject:[NSNumber numberWithInt:2]];
-    XCTAssertTrue([tree containsObject:[NSNumber numberWithInt:2]]);
+    XCTAssertTrue([tree containObject:[NSNumber numberWithInt:2]]);
 }
 
 @end
