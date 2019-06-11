@@ -343,14 +343,10 @@
             int rightheight = [self countBlackNodesIn: root.right];
             if (leftheight == rightheight) {
                 root.color=BLACK;
-                return;
             }
-        } else {
-            return;
         }
     } else {
         [self deleteCaseTwo:parentNode];
-        return;
     }
 }
 
@@ -358,22 +354,8 @@
     return !node || node.color == BLACK;
 }
 
--(bool) bothKidsAreBlack: (RedBlackNode<id>*_Nonnull) node{
-    return [self isBlack:node.left] && [self isBlack:node.right];
-}
-
--(RedBlackNode<id>*) getRedKid: (RedBlackNode<id>* _Nonnull) node{
-    if (node.left && node.left.color == RED){
-        return node.left;
-    } else if (node.right && node.right.color == RED) {
-        return node.right;
-    } else {
-        return nil;
-    }
-}
-
 -(void)deleteCaseTwo:(RedBlackNode<id>*) parentNode{
-    if([self hasRedChild:parentNode] && [self bothKidsAreBlack:[self getRedKid:parentNode]]) {
+    if([self hasRedChild:parentNode] && [[parentNode getRedKid] bothKidsAreBlack]) {
         int leftheight = [self countBlackNodesIn:parentNode.left];
         int rightheight = [self countBlackNodesIn:parentNode.right];
         if(rightheight>leftheight) {
@@ -395,7 +377,7 @@
         if(rightheight>leftheight){
             nodeToExaminate=parentNode.right;
         }
-        if(nodeToExaminate.color==BLACK && [self bothKidsAreBlack:nodeToExaminate]){
+        if(nodeToExaminate.color==BLACK && [nodeToExaminate bothKidsAreBlack]){
             [nodeToExaminate swapColor];
             parentNode=parentNode.parent;
             [self deleteCaseOne:parentNode];
@@ -413,7 +395,7 @@
         if(rightheight>leftheight){
             nodeToExaminate=parentNode.right;
         }
-        if([self isBlack:nodeToExaminate]&& nodeToExaminate!=nil && [self bothKidsAreBlack:nodeToExaminate]){
+        if([self isBlack:nodeToExaminate]&& nodeToExaminate!=nil && [nodeToExaminate bothKidsAreBlack]){
             [parentNode swapColor];
             [nodeToExaminate swapColor];
             if([self amountOfChildren:parentNode]==2){
@@ -434,7 +416,7 @@
         if(rightheight>leftheight){
             nodeToExaminate=parentNode.right;
         }
-        if(nodeToExaminate.color==BLACK && [self hasRedChild:nodeToExaminate] && [nodeToExaminate hasBlackChild]){
+        if(nodeToExaminate.color==BLACK && [self hasRedChild:nodeToExaminate] && ([nodeToExaminate getBlackChild] != nil)) {
             if(rightheight>leftheight && nodeToExaminate.left!=nil && nodeToExaminate.left.color==RED){
                 [self rotateRight:nodeToExaminate];
                 [self changeColorAfterRightRotation:nodeToExaminate.parent];

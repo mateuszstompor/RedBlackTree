@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 
 #import "RedBlackTree.h"
-#import "../redblacktree/internal/RedBlackNode.h"
+#import "../../redblacktree/internal/RedBlackNode.h"
 
 @interface RedBlackTree (Tests)
 
