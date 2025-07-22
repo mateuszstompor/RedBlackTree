@@ -1,41 +1,37 @@
-# Red Black Tree
-###### Tests status
+## Red Black Tree &middot; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
 <p align="center">
   <img src="https://image.ibb.co/n0LNG5/rbt.png">
 </p>
 
-## Features
+### Features
 <ul>
     <li>Objective-C 2.0 (with ARC)</li>
     <li>Unit-Tests</li>
     <li>Coverage 80+</li>
 </ul>
 
-## About
-macOS framework made in a way similar to all foundation containers. It is a generic data structure, has interface similar to all other foundation containers and is tested.
-It is meant to be used as a base for other, higher level data structure, for example a dictionary. It is key only tree. In oreder to use it as a container you shoud
-override the main class, create a specialized type which contains both key and value and be able to return a value for given key.
+### About
+This is a macOS framework that implements a generic red-black tree, modeled after Foundation containers. Designed for flexibility and extensibility, it serves as a foundational, key-only data structure. You can subclass the main tree to create higher-level containers such as dictionaries, by defining specialized types that associate keys with values. The interface is familiar to developers who have used Foundation containers, and the framework is thoroughly tested for reliability.
 
-### Properties of Red-Black Tree
-<ul>
-    <li>Each node is either red or black</li>
-    <li>The root is black</li>
-    <li>All leaves and nil-children are considered to be black.</li>
-    <li>If a node is red, then both its children are black</li>
-    <li>Every path from a given node to any of its descendant nil nodes contains the same number of black nodes</li>
-</ul>
-
-## Interface
+### Usage Example
 ```objective-c
-@interface RedBlackTree<T> : NSObject
+// Create a RedBlackTree instance
+RedBlackTree<NSNumber *> *tree = [[RedBlackTree alloc] init];
 
-@property (nonatomic, readonly) NSUInteger count;
+// Add objects
+[tree addObject:@42];
+[tree addObject:@17];
+[tree addObject:@99];
 
-- (instancetype)          init;
-- (void)                  addObject: (T) object;
-- (BOOL)                  containsObject: (T) anObject;
-- (void)                  removeObject: (T) anObject;
-- (T _Nullable)           objectForKey: (T _Nonnull) anObject;
+// Check if an object exists
+BOOL contains42 = [tree containsObject:@42]; // YES
 
-@end
+// Retrieve an object (if it exists)
+NSNumber *value = [tree objectForKey:@17];
+
+// Remove an object
+[tree removeObject:@99];
+
+// Check current count
+NSUInteger count = tree.count;
