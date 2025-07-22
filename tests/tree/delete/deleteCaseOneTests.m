@@ -1,32 +1,27 @@
 //
-//  deleteCaseOneTests.m
-//  tests
-//
 //  Created by Mateusz Stompór on 30/09/2018.
 //  Copyright © 2018 Mateusz Stompór. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
+#import <redblacktree/redblacktree.h>
 
-#import "RedBlackTree.h"
-#import "../../../redblacktree/internal/RedBlackNode.h"
+@interface RBTree (Tests)
 
-@interface RedBlackTree (Tests)
-
--(RedBlackNode<id> *) root;
+-(RBNode<id> *) root;
 
 @end
 
 @interface DeleteCaseOneTests : XCTestCase
 {
-    RedBlackTree<NSNumber*>* tree;
+    RBTree<NSNumber*>* tree;
 }
 @end
 
 @implementation DeleteCaseOneTests
 
 - (void) setUp {
-    tree = [[RedBlackTree alloc] init];
+    tree = [[RBTree alloc] init];
 }
 
 - (void) testDeleteOnEmptyTree {
@@ -37,7 +32,7 @@
     [tree addObject:[NSNumber numberWithInt:2]];
     
     XCTAssertNoThrow([tree removeObject:[NSNumber numberWithInt:2]]);
-    XCTAssertTrue(![tree containObject:[NSNumber numberWithInt:2]]);
+    XCTAssertTrue(![tree containsObject:[NSNumber numberWithInt:2]]);
 }
 
 -(void) testDeleteColoringOnRootWithLeftChildTree {

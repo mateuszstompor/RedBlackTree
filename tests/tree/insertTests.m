@@ -1,32 +1,27 @@
 //
-//  insertTests.m
-//  insertTests
-//
 //  Created by Mateusz Stompór on 30/05/2017.
 //  Copyright © 2017 Mateusz Stompór. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
+#import <redblacktree/redblacktree.h>
 
-#import "RedBlackTree.h"
-#import "../../redblacktree/internal/RedBlackNode.h"
+@interface RBTree (Tests)
 
-@interface RedBlackTree (Tests)
-
--(RedBlackNode<id> *) root;
+-(RBNode<id> *) root;
 
 @end
 
 @interface InsertTests : XCTestCase
 {
-    RedBlackTree<NSNumber*>* tree;
+    RBTree<NSNumber*>* tree;
 }
 @end
 
 @implementation InsertTests
 
 - (void) setUp {
-    tree = [[RedBlackTree alloc] init];
+    tree = [[RBTree alloc] init];
 }
 
 - (void) tearDown {

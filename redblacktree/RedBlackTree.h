@@ -1,23 +1,14 @@
 //
-//  RedBlackTree.h
-//  RED_BLACK_TREES
-//
-//  Created by Mateusz Stompór on 29/03/2017.
+//  Created by Mateusz Stompór on 30/12/2017.
 //  Copyright © 2017 Mateusz Stompór. All rights reserved.
+//
 
-#pragma once
+#import <Cocoa/Cocoa.h>
 
-@interface RedBlackTree<T> : NSObject
-{
-    NSUInteger count;
-}
+FOUNDATION_EXPORT double redblacktree_framework_macOSVersionNumber;
 
-@property (nonatomic, readonly) NSUInteger count;
+FOUNDATION_EXPORT const unsigned char redblacktree_framework_macOSVersionString[];
 
-- (instancetype _Nullable)          init;
-- (void)                            addObject: (T _Nonnull) anObject;
-- (BOOL)                            containObject: (T _Nonnull) anObject;
-- (void)                            removeObject: (T _Nonnull) anObject;
-- (T _Nullable)                     objectForKey: (T _Nonnull) anObject;
-
-@end
+#import "RBTree.h"
+#import "RBNode.h"
+#import "RBColor.h"
