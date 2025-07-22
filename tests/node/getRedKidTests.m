@@ -1,7 +1,4 @@
 //
-//  getRedKidTests.m
-//  tests
-//
 //  Created by Mateusz Stompor on 11/06/2019.
 //  Copyright © 2019 Mateusz Stompór. All rights reserved.
 //

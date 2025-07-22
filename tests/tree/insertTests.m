@@ -1,7 +1,4 @@
 //
-//  insertTests.m
-//  insertTests
-//
 //  Created by Mateusz Stompór on 30/05/2017.
 //  Copyright © 2017 Mateusz Stompór. All rights reserved.
 //

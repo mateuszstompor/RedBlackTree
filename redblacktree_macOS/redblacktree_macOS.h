@@ -1,7 +1,4 @@
 //
-//  redblacktree_macOS.h
-//  redblacktree_macOS
-//
 //  Created by Mateusz Stompór on 30/12/2017.
 //  Copyright © 2017 Mateusz Stompór. All rights reserved.
 //

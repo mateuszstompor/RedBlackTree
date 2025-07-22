@@ -1,10 +1,8 @@
 //
-//  RedBlackTree.m
-//  RED_BLACK_TREE
-//
 //  Created by Mateusz Stompór on 29/03/2017.
 //  Copyright © 2017 Mateusz Stompór. All rights reserved.
 //
+
 #import <Foundation/Foundation.h>
 
 #import <assert.h>
@@ -35,7 +33,8 @@
     } else {
         int leftSubTree = [self countBlackNodesIn: currentPoint.left];
         int rightSubTree = [self countBlackNodesIn: currentPoint.right];
-        return currentPoint.color == BLACK ? rightSubTree + 1 : rightSubTree;
+        int total = leftSubTree + rightSubTree;
+        return currentPoint.color == BLACK ? total + 1 : total;
     }
 }
 
@@ -210,7 +209,7 @@
     return nil;
 }
 
-- (BOOL) containObject: (id _Nonnull) anObject {
+- (BOOL) containsObject: (id _Nonnull) anObject {
     return [self searchFor: anObject] != nil;
 }
 

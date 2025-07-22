@@ -1,9 +1,7 @@
 //
-//  RedBlackNode.m
-//  RED_BLACK_TREE
-//
 //  Created by Mateusz Stompór on 29/03/2017.
 //  Copyright © 2017 Mateusz Stompór. All rights reserved.
+//
 
 #import "RedBlackNode.h"
 
