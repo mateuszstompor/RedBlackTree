@@ -3,9 +3,9 @@
 //  Copyright © 2017 Mateusz Stompór. All rights reserved.
 //
 
-#import "RedBlackNode.h"
+#import "RBNode.h"
 
-@implementation RedBlackNode : NSObject
+@implementation RBNode : NSObject
 
 @synthesize color       = color;
 @synthesize data        = data;
@@ -13,12 +13,12 @@
 @synthesize right       = right;
 @synthesize parent      = parent;
 
-- (instancetype _Nonnull)initWithParent: (RedBlackNode<id> * _Nullable) parent andValue: (id _Nonnull) value {
+- (instancetype _Nonnull)initWithParent: (RBNode<id> * _Nullable) parent andValue: (id _Nonnull) value {
     self = [self initWithParent: parent andValue: value color: RED];
     return self;
 }
 
-- (instancetype _Nonnull)initWithParent: (RedBlackNode<id> * _Nullable) parent andValue: (id _Nonnull) value color: (NodeColor) color {
+- (instancetype _Nonnull)initWithParent: (RBNode<id> * _Nullable) parent andValue: (id _Nonnull) value color: (RBColor) color {
     self = [self init];
     if(self) {
         self.data    = value;
@@ -42,7 +42,7 @@
     return parent && parent.left == self;
 }
 
-- (RedBlackNode<id>*) getRedKid {
+- (RBNode<id>*) getRedKid {
     if (self.left && self.left.color == RED){
         return self.left;
     } else if (self.right && self.right.color == RED) {
@@ -66,7 +66,7 @@
     return !self.left || self.left.color == BLACK || !self.right || self.right.color == BLACK;
 }
 
-- (RedBlackNode<id>*) getBlackChild {
+- (RBNode<id>*) getBlackChild {
     if (self.left && self.left.color == BLACK) {
         return self.left;
     } else if (self.right && self.right.color == BLACK) {

@@ -4,19 +4,18 @@
 //
 
 #import <XCTest/XCTest.h>
-
-#import "RedBlackTree.h"
+#import <redblacktree/redblacktree.h>
 
 @interface ContainsTests : XCTestCase
 {
-    RedBlackTree<NSNumber*>* tree;
+    RBTree<NSNumber*>* tree;
 }
 @end
 
 @implementation ContainsTests
 
 - (void)setUp {
-    tree = [[RedBlackTree alloc] init];
+    tree = [[RBTree alloc] init];
 }
 
 - (void)testContainsOnEmptyTree {

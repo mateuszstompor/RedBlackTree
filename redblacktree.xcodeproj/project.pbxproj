@@ -13,13 +13,13 @@
 		5609F9DB2160650200EF9118 /* containTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9DA2160650200EF9118 /* containTests.m */; };
 		5609F9E92160D8DB00EF9118 /* deleteCaseFourTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9E32160D8DB00EF9118 /* deleteCaseFourTests.m */; };
 		5609F9EA2160D8DB00EF9118 /* deleteCaseOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609F9E42160D8DB00EF9118 /* deleteCaseOneTests.m */; };
-		563FB8362160406000D61390 /* NodeColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 563FB8322160406000D61390 /* NodeColor.h */; };
-		563FB8372160406000D61390 /* RedBlackNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 563FB8332160406000D61390 /* RedBlackNode.h */; };
-		563FB8382160406000D61390 /* RedBlackNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 563FB8342160406000D61390 /* RedBlackNode.m */; };
-		563FB8392160406000D61390 /* RedBlackTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 563FB8352160406000D61390 /* RedBlackTree.m */; };
+		563FB8362160406000D61390 /* RBColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 563FB8322160406000D61390 /* RBColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		563FB8372160406000D61390 /* RBNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 563FB8332160406000D61390 /* RBNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		563FB8382160406000D61390 /* RBNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 563FB8342160406000D61390 /* RBNode.m */; };
+		563FB8392160406000D61390 /* RBTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 563FB8352160406000D61390 /* RBTree.m */; };
 		563FB83B216045A800D61390 /* initializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 563FB83A216045A800D61390 /* initializerTests.m */; };
-		56C22B2B1FF71EB00035E6A5 /* redblacktree_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 56C22B291FF71EB00035E6A5 /* redblacktree_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		56C22B331FF71EC80035E6A5 /* RedBlackTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C590441F63104300CB0A20 /* RedBlackTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56C22B2B1FF71EB00035E6A5 /* redblacktree.h in Headers */ = {isa = PBXBuildFile; fileRef = 56C22B291FF71EB00035E6A5 /* redblacktree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56C22B331FF71EC80035E6A5 /* RBTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C590441F63104300CB0A20 /* RBTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61C590641F63111100CB0A20 /* insertTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C590471F63104E00CB0A20 /* insertTests.m */; };
 /* End PBXBuildFile section */
 
@@ -37,27 +37,20 @@
 		2FC82A8822AF91B100B6C0FA /* getBlackKidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = getBlackKidTests.m; sourceTree = "<group>"; };
 		2FC82A8A22AF940A00B6C0FA /* getRedKidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = getRedKidTests.m; sourceTree = "<group>"; };
 		5609F9CE21605B6C00EF9118 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		5609F9D021605B6C00EF9118 /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
-		5609F9D121605B6C00EF9118 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		5609F9D221605B6C00EF9118 /* report.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = report.xml; sourceTree = "<group>"; };
-		5609F9D421605B6C00EF9118 /* report.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = report.html; sourceTree = "<group>"; };
-		5609F9D521605B6C00EF9118 /* report.junit */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = report.junit; sourceTree = "<group>"; };
-		5609F9D621605B6C00EF9118 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
-		5609F9D721605B6C00EF9118 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		5609F9D821605BF200EF9118 /* countTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = countTests.m; sourceTree = "<group>"; };
 		5609F9DA2160650200EF9118 /* containTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = containTests.m; sourceTree = "<group>"; };
 		5609F9E32160D8DB00EF9118 /* deleteCaseFourTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deleteCaseFourTests.m; sourceTree = "<group>"; };
 		5609F9E42160D8DB00EF9118 /* deleteCaseOneTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deleteCaseOneTests.m; sourceTree = "<group>"; };
-		563FB8322160406000D61390 /* NodeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeColor.h; sourceTree = "<group>"; };
-		563FB8332160406000D61390 /* RedBlackNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedBlackNode.h; sourceTree = "<group>"; };
-		563FB8342160406000D61390 /* RedBlackNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedBlackNode.m; sourceTree = "<group>"; };
-		563FB8352160406000D61390 /* RedBlackTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedBlackTree.m; sourceTree = "<group>"; };
+		563FB8322160406000D61390 /* RBColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBColor.h; sourceTree = "<group>"; };
+		563FB8332160406000D61390 /* RBNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBNode.h; sourceTree = "<group>"; };
+		563FB8342160406000D61390 /* RBNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBNode.m; sourceTree = "<group>"; };
+		563FB8352160406000D61390 /* RBTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTree.m; sourceTree = "<group>"; };
 		563FB83A216045A800D61390 /* initializerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = initializerTests.m; sourceTree = "<group>"; };
-		56C22B271FF71EB00035E6A5 /* redblacktree_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = redblacktree_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		56C22B291FF71EB00035E6A5 /* redblacktree_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = redblacktree_macOS.h; sourceTree = "<group>"; };
+		56C22B271FF71EB00035E6A5 /* redblacktree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = redblacktree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56C22B291FF71EB00035E6A5 /* redblacktree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = redblacktree.h; sourceTree = "<group>"; };
 		56C22B2A1FF71EB00035E6A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		612B93111F630FA10017F2DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		61C590441F63104300CB0A20 /* RedBlackTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedBlackTree.h; sourceTree = "<group>"; };
+		61C590441F63104300CB0A20 /* RBTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RBTree.h; sourceTree = "<group>"; };
 		61C590471F63104E00CB0A20 /* insertTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = insertTests.m; sourceTree = "<group>"; };
 		61C590581F63110A00CB0A20 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C5905C1F63110A00CB0A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,26 +95,6 @@
 			path = tree;
 			sourceTree = "<group>";
 		};
-		5609F9CF21605B6C00EF9118 /* fastlane */ = {
-			isa = PBXGroup;
-			children = (
-				5609F9D021605B6C00EF9118 /* Fastfile */,
-				5609F9D121605B6C00EF9118 /* README.md */,
-				5609F9D221605B6C00EF9118 /* report.xml */,
-				5609F9D321605B6C00EF9118 /* test_output */,
-			);
-			path = fastlane;
-			sourceTree = "<group>";
-		};
-		5609F9D321605B6C00EF9118 /* test_output */ = {
-			isa = PBXGroup;
-			children = (
-				5609F9D421605B6C00EF9118 /* report.html */,
-				5609F9D521605B6C00EF9118 /* report.junit */,
-			);
-			path = test_output;
-			sourceTree = "<group>";
-		};
 		5609F9E12160D8DB00EF9118 /* delete */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,21 +107,13 @@
 		563FB8312160406000D61390 /* internal */ = {
 			isa = PBXGroup;
 			children = (
-				563FB8322160406000D61390 /* NodeColor.h */,
-				563FB8332160406000D61390 /* RedBlackNode.h */,
-				563FB8342160406000D61390 /* RedBlackNode.m */,
-				563FB8352160406000D61390 /* RedBlackTree.m */,
+				563FB8322160406000D61390 /* RBColor.h */,
+				61C590441F63104300CB0A20 /* RBTree.h */,
+				563FB8352160406000D61390 /* RBTree.m */,
+				563FB8332160406000D61390 /* RBNode.h */,
+				563FB8342160406000D61390 /* RBNode.m */,
 			);
 			path = internal;
-			sourceTree = "<group>";
-		};
-		56C22B281FF71EB00035E6A5 /* redblacktree_macOS */ = {
-			isa = PBXGroup;
-			children = (
-				56C22B291FF71EB00035E6A5 /* redblacktree_macOS.h */,
-				56C22B2A1FF71EB00035E6A5 /* Info.plist */,
-			);
-			path = redblacktree_macOS;
 			sourceTree = "<group>";
 		};
 		612B92C01F630E130017F2DE = {
@@ -156,10 +121,6 @@
 			children = (
 				612B92CB1F630E140017F2DE /* redblacktree */,
 				61C590591F63110A00CB0A20 /* tests */,
-				56C22B281FF71EB00035E6A5 /* redblacktree_macOS */,
-				5609F9CF21605B6C00EF9118 /* fastlane */,
-				5609F9D621605B6C00EF9118 /* Gemfile */,
-				5609F9D721605B6C00EF9118 /* Gemfile.lock */,
 				5609F9CE21605B6C00EF9118 /* README.md */,
 				612B92CA1F630E140017F2DE /* Products */,
 				612B93101F630FA10017F2DE /* Frameworks */,
@@ -170,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				61C590581F63110A00CB0A20 /* tests.xctest */,
-				56C22B271FF71EB00035E6A5 /* redblacktree_macOS.framework */,
+				56C22B271FF71EB00035E6A5 /* redblacktree.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,8 +139,9 @@
 		612B92CB1F630E140017F2DE /* redblacktree */ = {
 			isa = PBXGroup;
 			children = (
+				56C22B2A1FF71EB00035E6A5 /* Info.plist */,
+				56C22B291FF71EB00035E6A5 /* redblacktree.h */,
 				563FB8312160406000D61390 /* internal */,
-				61C590441F63104300CB0A20 /* RedBlackTree.h */,
 			);
 			path = redblacktree;
 			sourceTree = "<group>";
@@ -209,19 +171,19 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56C22B2B1FF71EB00035E6A5 /* redblacktree_macOS.h in Headers */,
-				56C22B331FF71EC80035E6A5 /* RedBlackTree.h in Headers */,
-				563FB8362160406000D61390 /* NodeColor.h in Headers */,
-				563FB8372160406000D61390 /* RedBlackNode.h in Headers */,
+				56C22B2B1FF71EB00035E6A5 /* redblacktree.h in Headers */,
+				56C22B331FF71EC80035E6A5 /* RBTree.h in Headers */,
+				563FB8362160406000D61390 /* RBColor.h in Headers */,
+				563FB8372160406000D61390 /* RBNode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		56C22B261FF71EB00035E6A5 /* redblacktree_macOS */ = {
+		56C22B261FF71EB00035E6A5 /* redblacktree */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 56C22B2E1FF71EB00035E6A5 /* Build configuration list for PBXNativeTarget "redblacktree_macOS" */;
+			buildConfigurationList = 56C22B2E1FF71EB00035E6A5 /* Build configuration list for PBXNativeTarget "redblacktree" */;
 			buildPhases = (
 				56C22B221FF71EB00035E6A5 /* Sources */,
 				56C22B231FF71EB00035E6A5 /* Frameworks */,
@@ -232,9 +194,9 @@
 			);
 			dependencies = (
 			);
-			name = redblacktree_macOS;
+			name = redblacktree;
 			productName = redblacktree_framework_macOS;
-			productReference = 56C22B271FF71EB00035E6A5 /* redblacktree_macOS.framework */;
+			productReference = 56C22B271FF71EB00035E6A5 /* redblacktree.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		61C590571F63110A00CB0A20 /* tests */ = {
@@ -285,7 +247,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				56C22B261FF71EB00035E6A5 /* redblacktree_macOS */,
+				56C22B261FF71EB00035E6A5 /* redblacktree */,
 				61C590571F63110A00CB0A20 /* tests */,
 			);
 		};
@@ -306,8 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				563FB8392160406000D61390 /* RedBlackTree.m in Sources */,
-				563FB8382160406000D61390 /* RedBlackNode.m in Sources */,
+				563FB8392160406000D61390 /* RBTree.m in Sources */,
+				563FB8382160406000D61390 /* RBNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +293,7 @@
 /* Begin PBXTargetDependency section */
 		5609F9EF216109CC00EF9118 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 56C22B261FF71EB00035E6A5 /* redblacktree_macOS */;
+			target = 56C22B261FF71EB00035E6A5 /* redblacktree */;
 			targetProxy = 5609F9EE216109CC00EF9118 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -350,7 +312,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = redblacktree_macOS/Info.plist;
+				INFOPLIST_FILE = redblacktree/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
@@ -379,7 +341,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = redblacktree_macOS/Info.plist;
+				INFOPLIST_FILE = redblacktree/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
@@ -539,7 +501,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		56C22B2E1FF71EB00035E6A5 /* Build configuration list for PBXNativeTarget "redblacktree_macOS" */ = {
+		56C22B2E1FF71EB00035E6A5 /* Build configuration list for PBXNativeTarget "redblacktree" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				56C22B2C1FF71EB00035E6A5 /* Debug */,

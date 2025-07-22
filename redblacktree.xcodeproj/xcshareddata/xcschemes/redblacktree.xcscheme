@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "56C22B261FF71EB00035E6A5"
-               BuildableName = "redblacktree_macOS.framework"
-               BlueprintName = "redblacktree_macOS"
+               BuildableName = "redblacktree.framework"
+               BlueprintName = "redblacktree"
                ReferencedContainer = "container:redblacktree.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,8 +26,17 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "56C22B261FF71EB00035E6A5"
+            BuildableName = "redblacktree.framework"
+            BlueprintName = "redblacktree"
+            ReferencedContainer = "container:redblacktree.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -40,17 +49,6 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "56C22B261FF71EB00035E6A5"
-            BuildableName = "redblacktree_macOS.framework"
-            BlueprintName = "redblacktree_macOS"
-            ReferencedContainer = "container:redblacktree.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -66,13 +64,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "56C22B261FF71EB00035E6A5"
-            BuildableName = "redblacktree_macOS.framework"
-            BlueprintName = "redblacktree_macOS"
+            BuildableName = "redblacktree.framework"
+            BlueprintName = "redblacktree"
             ReferencedContainer = "container:redblacktree.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -84,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "56C22B261FF71EB00035E6A5"
-            BuildableName = "redblacktree_macOS.framework"
-            BlueprintName = "redblacktree_macOS"
+            BuildableName = "redblacktree.framework"
+            BlueprintName = "redblacktree"
             ReferencedContainer = "container:redblacktree.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

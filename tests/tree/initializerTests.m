@@ -4,19 +4,18 @@
 //
 
 #import <XCTest/XCTest.h>
-
-#import "RedBlackTree.h"
+#import <redblacktree/redblacktree.h>
 
 @interface InitializerTests : XCTestCase
 {
-    RedBlackTree<NSNumber*>* tree;
+    RBTree<NSNumber*>* tree;
 }
 @end
 
 @implementation InitializerTests
 
 - (void)testDefaultInitializer {
-    tree = [[RedBlackTree alloc] init];
+    tree = [[RBTree alloc] init];
     XCTAssertNotNil(tree);
 }
 

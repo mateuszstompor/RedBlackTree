@@ -4,34 +4,32 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <redblacktree/redblacktree.h>
 
-#import "RedBlackTree.h"
-#import "../../../redblacktree/internal/RedBlackNode.h"
-
-@interface RedBlackTree (Tests)
+@interface RBTree (Tests)
 
 @property (nonatomic) NSUInteger count;
 
--(RedBlackNode<id> *) root;
--(void) setRoot: (RedBlackNode<id> *) root;
+-(RBNode<id> *) root;
+-(void) setRoot: (RBNode<id> *) root;
 
 @end
 
 @interface DeleteCaseFourTests : XCTestCase
 {
-    RedBlackTree<NSNumber*>* tree;
+    RBTree<NSNumber*>* tree;
 }
 @end
 
 @implementation DeleteCaseFourTests
 
 - (void) setUp {
-    tree = [[RedBlackTree alloc] init];
-    id node = [[RedBlackNode alloc] initWithParent:nil andValue: [NSNumber numberWithInt: 10] color: BLACK];
-    [node setLeft:[[RedBlackNode alloc] initWithParent:node andValue: [NSNumber numberWithInt: -10] color: BLACK]];
-    [node setRight:[[RedBlackNode alloc] initWithParent:node andValue: [NSNumber numberWithInt: 30] color: RED]];
-    [[node right] setRight:[[RedBlackNode alloc] initWithParent:[node right] andValue: [NSNumber numberWithInt: 38] color: BLACK]];
-    [[node right] setLeft:[[RedBlackNode alloc] initWithParent:[node right] andValue: [NSNumber numberWithInt: 20] color: BLACK]];
+    tree = [[RBTree alloc] init];
+    id node = [[RBNode alloc] initWithParent:nil andValue: [NSNumber numberWithInt: 10] color: BLACK];
+    [node setLeft:[[RBNode alloc] initWithParent:node andValue: [NSNumber numberWithInt: -10] color: BLACK]];
+    [node setRight:[[RBNode alloc] initWithParent:node andValue: [NSNumber numberWithInt: 30] color: RED]];
+    [[node right] setRight:[[RBNode alloc] initWithParent:[node right] andValue: [NSNumber numberWithInt: 38] color: BLACK]];
+    [[node right] setLeft:[[RBNode alloc] initWithParent:[node right] andValue: [NSNumber numberWithInt: 20] color: BLACK]];
     [tree setRoot: node];
     [tree setCount: 5];
 }

@@ -1,6 +1,6 @@
 # Red Black Tree
 ###### Tests status
-[![Build Status](https://www.travis-ci.org/mateuszstompor/RedBlackTree.svg?branch=master)](https://www.travis-ci.org/mateuszstompor/RedBlackTree)
+
 <p align="center">
   <img src="https://image.ibb.co/n0LNG5/rbt.png">
 </p>
@@ -39,37 +39,3 @@ override the main class, create a specialized type which contains both key and v
 - (T _Nullable)           objectForKey: (T _Nonnull) anObject;
 
 @end
-```
-
-
-## Example usage
-
-```objective-c
-
-#import <RedBlackTree/RedBlackTree.h>
-
-int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        // initialize
-        RedBlackTree<NSNumber*>* tree;
-        tree = [[RedBlackTree alloc] init];
-
-        // add an element
-        [tree addObject: [NSNumber numberWithInt:3]];
-
-        // count elements
-        [tree count];
-
-        // remove an element
-        [tree removeObject: [NSNumber numberWithInt:3]];
-
-        // check if it contains an object
-        [tree containsObject: [NSNumber numberWithInt:3]];
-        
-        // returns given key from the tree
-        [tree objectForKey: [NSNumber numberWithInt:3]];
-    }
-    return 0;
-}
-
-```
