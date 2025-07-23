@@ -4,15 +4,15 @@
   <img src="./assets/rbt.png" alt="RedBlackTree logo">
 </p>
 
+### About
+This is a macOS framework that implements a generic red-black tree, modeled after Foundation containers. Designed for flexibility and extensibility, it serves as a foundational, key-only data structure. You can subclass the main tree to create higher-level containers such as dictionaries, by defining specialized types that associate keys with values. The interface is familiar to developers who have used Foundation containers, and the framework is thoroughly tested for reliability.
+
 ### Features
 <ul>
     <li>Objective-C 2.0 (with ARC)</li>
     <li>Unit-Tests</li>
     <li>Coverage 80+</li>
 </ul>
-
-### About
-This is a macOS framework that implements a generic red-black tree, modeled after Foundation containers. Designed for flexibility and extensibility, it serves as a foundational, key-only data structure. You can subclass the main tree to create higher-level containers such as dictionaries, by defining specialized types that associate keys with values. The interface is familiar to developers who have used Foundation containers, and the framework is thoroughly tested for reliability.
 
 ### Usage
 A few examples that help understand how container should be used
@@ -59,3 +59,6 @@ NSNumber *value = [tree objectForKey:@17];
 // Check current count
 NSUInteger count = tree.count;
 ```
+
+### Contributing
+Contributions are welcome! Please fork the repository and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
