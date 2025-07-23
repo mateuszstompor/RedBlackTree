@@ -1,4 +1,4 @@
-## Red Black Tree &middot; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+## Red Black Tree &middot; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) &middot; [![Tests](https://github.com/mateuszstompor/RedBlackTree/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/mateuszstompor/RedBlackTree/actions/workflows/tests.yml)
 
 <p align="center">
   <img src="./assets/rbt.png" alt="RedBlackTree logo">
