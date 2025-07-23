@@ -36,13 +36,13 @@ RedBlackTree<NSNumber *> *tree = [[RedBlackTree alloc] init];
 
 ```objective-c
 // Check if an object exists
-BOOL contains42 = [tree containsObject:@42]; // YES
+BOOL isPresent = [tree containsObject:@42];
 ```
 
 ##### Retrieval
 
 ```objective-c
-// Retrieve an object (if it exists)
+// Retrieve an object
 NSNumber *value = [tree objectForKey:@17];
 ```
 
@@ -56,7 +56,7 @@ NSNumber *value = [tree objectForKey:@17];
 ##### Getting elements count
 
 ```objective-c
-// Check current count
+// Check elements count
 NSUInteger count = tree.count;
 ```
 
