@@ -14,7 +14,7 @@
 @synthesize parent      = parent;
 
 - (instancetype _Nonnull)initWithParent: (RBNode<id> * _Nullable) parent andValue: (id _Nonnull) value {
-    self = [self initWithParent: parent andValue: value color: RED];
+    self = [self initWithParent:parent andValue:value color:RB_RED];
     return self;
 }
 
@@ -30,47 +30,47 @@
     return self;
 }
 
-- (void) swapColor {
-    color = color == RED ? BLACK : RED;
+- (void)swapColor {
+    color = color == RB_RED ? RB_BLACK : RB_RED;
 }
 
-- (BOOL) isRight {
+- (BOOL)isRightChild {
     return parent && parent.right == self;
 }
 
-- (BOOL) isLeft {
+- (BOOL)isLeftChild {
     return parent && parent.left == self;
 }
 
-- (RBNode<id>*) getRedKid {
-    if (self.left && self.left.color == RED){
-        return self.left;
-    } else if (self.right && self.right.color == RED) {
-        return self.right;
+- (RBNode<id> *)getRedChild {
+    if (left && left.color == RB_RED){
+        return left;
+    } else if (right && right.color == RB_RED) {
+        return right;
     } else {
         return nil;
     }
 }
 
-- (int) childrenAmount {
-    if (self.left && self.right) {
+- (int)childrenCount {
+    if (left && right) {
         return 2;
-    } else if (self.left || self.right) {
+    } else if (left || right) {
         return 1;
     } else {
         return 0;
     }
 }
 
-- (BOOL) bothKidsAreBlack {
-    return !self.left || self.left.color == BLACK || !self.right || self.right.color == BLACK;
+- (BOOL)bothChildrenConsideredAsBlack {
+    return !left || left.color == RB_BLACK || !right || right.color == RB_BLACK;
 }
 
-- (RBNode<id>*) getBlackChild {
-    if (self.left && self.left.color == BLACK) {
-        return self.left;
-    } else if (self.right && self.right.color == BLACK) {
-        return self.right;
+- (RBNode<id> *)getBlackChild {
+    if (left && left.color == RB_BLACK) {
+        return left;
+    } else if (right && right.color == RB_BLACK) {
+        return right;
     } else {
         return nil;
     }

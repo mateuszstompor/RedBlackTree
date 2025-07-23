@@ -23,24 +23,28 @@
 
 @implementation DeleteCaseFourTests
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
 - (void) setUp {
     tree = [[RBTree alloc] init];
-    id node = [[RBNode alloc] initWithParent:nil andValue: [NSNumber numberWithInt: 10] color: BLACK];
-    [node setLeft:[[RBNode alloc] initWithParent:node andValue: [NSNumber numberWithInt: -10] color: BLACK]];
-    [node setRight:[[RBNode alloc] initWithParent:node andValue: [NSNumber numberWithInt: 30] color: RED]];
-    [[node right] setRight:[[RBNode alloc] initWithParent:[node right] andValue: [NSNumber numberWithInt: 38] color: BLACK]];
-    [[node right] setLeft:[[RBNode alloc] initWithParent:[node right] andValue: [NSNumber numberWithInt: 20] color: BLACK]];
+    id node = [[RBNode alloc] initWithParent:nil andValue: [NSNumber numberWithInt: 10] color: RB_BLACK];
+    [node setLeft:[[RBNode alloc] initWithParent:node andValue: [NSNumber numberWithInt: -10] color: RB_BLACK]];
+    [node setRight:[[RBNode alloc] initWithParent:node andValue: [NSNumber numberWithInt: 30] color: RB_RED]];
+    [[node right] setRight:[[RBNode alloc] initWithParent:[node right] andValue: [NSNumber numberWithInt: 38] color: RB_BLACK]];
+    [[node right] setLeft:[[RBNode alloc] initWithParent:[node right] andValue: [NSNumber numberWithInt: 20] color: RB_BLACK]];
     [tree setRoot: node];
-    [tree setCount: 5];
+    [(NSObject *)tree performSelector:@selector(updateCount:) withObject:@5];
+
 }
+#pragma clang diagnostic pop
 
 - (void) testIfAfterDeletionColorseOfNodesAreValid {
     XCTAssertNoThrow([tree removeObject: [NSNumber numberWithInt: 20]]);
 
-    XCTAssertEqual(BLACK, [[tree root] color]);
-    XCTAssertEqual(BLACK, [[[tree root] left] color]);
-    XCTAssertEqual(BLACK, [[[tree root] right] color]);
-    XCTAssertEqual(RED, [[[[tree root] right] right] color]);
+    XCTAssertEqual(RB_BLACK, [[tree root] color]);
+    XCTAssertEqual(RB_BLACK, [[[tree root] left] color]);
+    XCTAssertEqual(RB_BLACK, [[[tree root] right] color]);
+    XCTAssertEqual(RB_RED, [[[[tree root] right] right] color]);
 }
 
 - (void) testIfAfterDeletionValuesOfNodesAreValid {

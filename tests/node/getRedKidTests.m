@@ -23,35 +23,35 @@
 }
 
 - (void)testBothRedChildren {
-    node.right = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:2] color:RED];
-    node.left = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:3] color:RED];
-    XCTAssertTrue([node getRedKid] == node.left || [node getRedKid] == node.right);
+    node.right = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:2] color:RB_RED];
+    node.left = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:3] color:RB_RED];
+    XCTAssertTrue([node getRedChild] == node.left || [node getRedChild] == node.right);
 }
 
 - (void)testBothBlackChildren {
-    node.right = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:2] color:BLACK];
-    node.left = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:3] color:BLACK];
-    XCTAssertNil([node getRedKid]);
+    node.right = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:2] color:RB_BLACK];
+    node.left = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:3] color:RB_BLACK];
+    XCTAssertNil([node getRedChild]);
 }
 
 - (void)testOneLeftRedChild {
-    node.left = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:3] color:RED];
-    XCTAssertEqual(node.left, [node getRedKid]);
+    node.left = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:3] color:RB_RED];
+    XCTAssertEqual(node.left, [node getRedChild]);
 }
 
 - (void)testOneRightChild {
-    node.right = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:3] color:RED];
-    XCTAssertEqual(node.right, [node getRedKid]);
+    node.right = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:3] color:RB_RED];
+    XCTAssertEqual(node.right, [node getRedChild]);
 }
 
 - (void)testOneLeftBlackChild {
-    node.left = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:3] color:BLACK];
-    XCTAssertNil([node getRedKid]);
+    node.left = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:3] color:RB_BLACK];
+    XCTAssertNil([node getRedChild]);
 }
 
 - (void)testOneRightBlackChild {
-    node.right = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:3] color:BLACK];
-    XCTAssertNil([node getRedKid]);
+    node.right = [[RBNode alloc] initWithParent:node andValue:[NSNumber numberWithInt:3] color:RB_BLACK];
+    XCTAssertNil([node getRedChild]);
 }
 
 @end
