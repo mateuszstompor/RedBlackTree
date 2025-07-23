@@ -41,7 +41,7 @@
     
     XCTAssertNoThrow([tree removeObject:[NSNumber numberWithInt:1]]);
     
-    XCTAssertEqual(BLACK, [[tree root] color]);
+    XCTAssertEqual(RB_BLACK, [[tree root] color]);
 }
 
 -(void) testDeleteStructureOnRootWithLeftChildTree {
@@ -60,7 +60,7 @@
     
     XCTAssertNoThrow([tree removeObject:[NSNumber numberWithInt:3]]);
     
-    XCTAssertEqual(BLACK, [[tree root] color]);
+    XCTAssertEqual(RB_BLACK, [[tree root] color]);
 }
 
 -(void) testDeleteStructureOnRootWithRightChildTree {
@@ -89,7 +89,7 @@
     
     XCTAssertNoThrow([tree removeObject:[NSNumber numberWithInt:2]]);
     
-    XCTAssertEqual(BLACK, [[tree root] color]);
+    XCTAssertEqual(RB_BLACK, [[tree root] color]);
 }
 
 @end

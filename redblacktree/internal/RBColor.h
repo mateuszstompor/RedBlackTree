@@ -5,4 +5,4 @@
 
 #pragma once
 
-typedef NS_ENUM (bool, RBColor) {RED, BLACK};
+typedef NS_ENUM (bool, RBColor) {RB_RED, RB_BLACK};
