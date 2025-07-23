@@ -1,7 +1,7 @@
 ## Red Black Tree &middot; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
 <p align="center">
-  <img src="https://image.ibb.co/n0LNG5/rbt.png">
+  <img src="./assets/rbt.png" alt="RedBlackTree logo">
 </p>
 
 ### Features
@@ -14,24 +14,48 @@
 ### About
 This is a macOS framework that implements a generic red-black tree, modeled after Foundation containers. Designed for flexibility and extensibility, it serves as a foundational, key-only data structure. You can subclass the main tree to create higher-level containers such as dictionaries, by defining specialized types that associate keys with values. The interface is familiar to developers who have used Foundation containers, and the framework is thoroughly tested for reliability.
 
-### Usage Example
+### Usage
+A few examples that help understand how container should be used
+
+##### Creation
 ```objective-c
 // Create a RedBlackTree instance
 RedBlackTree<NSNumber *> *tree = [[RedBlackTree alloc] init];
+```
 
+##### Object's addition
+
+```objective-c
 // Add objects
 [tree addObject:@42];
 [tree addObject:@17];
 [tree addObject:@99];
+```
 
+##### Check for existance
+
+```objective-c
 // Check if an object exists
 BOOL contains42 = [tree containsObject:@42]; // YES
+```
 
+##### Retrieval
+
+```objective-c
 // Retrieve an object (if it exists)
 NSNumber *value = [tree objectForKey:@17];
+```
 
+##### Removal of an element
+
+```objective-c
 // Remove an object
 [tree removeObject:@99];
+```
 
+##### Getting elements count
+
+```objective-c
 // Check current count
 NSUInteger count = tree.count;
+```
